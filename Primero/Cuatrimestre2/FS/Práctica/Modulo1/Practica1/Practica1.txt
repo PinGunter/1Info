@@ -1,0 +1,999 @@
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/ms/sensors:
+i2c.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/periodic:
+rtc
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/periodic/rtc:
+trigger.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/simple:
+dummy.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/ssp:
+sensorhub.h  sensors
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/ssp/sensors:
+commons.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st:
+accel  gyro  magn  press  press.h  sensors
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/accel:
+3axis.h  i2c  spi
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/accel/i2c:
+3axis.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/accel/spi:
+3axis.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/gyro:
+3axis.h  i2c  spi
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/gyro/i2c:
+3axis.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/gyro/spi:
+3axis.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/magn:
+3axis.h  i2c  spi
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/magn/i2c:
+3axis.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/magn/spi:
+3axis.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/press:
+i2c.h  spi.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/st/sensors:
+core.h	i2c.h  spi.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/sysfs:
+trigger.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/iio/triggered:
+buffer.h  event.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/illegal:
+pointer
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/illegal/pointer:
+value.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima:
+appraise.h  default  lsm  measure  mok	ng  trusted
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/default:
+hash  hash.h  template.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/default/hash:
+sha1.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/lsm:
+rules.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/measure:
+pcr
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/measure/pcr:
+idx.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/mok:
+keyring.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/ng:
+template.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/ima/trusted:
+keyring.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet:
+ah.h  dccp  diag.h  esp.h  ipcomp.h  lro.h  tcp  tunnel.h  udp	xfrm
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet/dccp:
+diag.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet/tcp:
+diag.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet/udp:
+diag.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet/xfrm:
+mode  tunnel.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet/xfrm/mode:
+beet.h	transport.h  tunnel.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet6:
+ah.h  esp.h  ipcomp.h  tunnel.h  xfrm
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet6/xfrm:
+mode  tunnel.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inet6/xfrm/mode:
+beet.h	routeoptimization.h  transport.h  tunnel.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/infiniband:
+addr	    cxgb3.h  ipoib    iser.h   mthca.h	ocrdma.h  srp.h   user
+amso1100.h  cxgb4.h  ipoib.h  isert.h  nes.h	on	  srpt.h  usnic.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/infiniband/addr:
+trans.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/infiniband/ipoib:
+cm.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/infiniband/on:
+demand
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/infiniband/on/demand:
+paging.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/infiniband/user:
+access.h  mad.h  mem.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/init:
+env
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/init/env:
+arg
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/init/env/arg:
+limit.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/initramfs:
+source.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inline:
+read  spin  write
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inline/read:
+unlock	unlock.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inline/read/unlock:
+irq.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inline/spin:
+unlock
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inline/spin/unlock:
+irq.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inline/write:
+unlock	unlock.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inline/write/unlock:
+irq.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/inotify:
+user.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input:
+88pm80x    cm109.h    ff	    max77693	pcf50633       tps65218
+88pm860x   cma3000    gp2a.h	    max8925	pcf8574.h      twl4030
+ad714x	   cma3000.h  gpio	    max8997	pcspkr.h       twl6040
+ad714x.h   da9052     ideapad	    mc13783	polldev.h      uinput.h
+adxl34x    da9055     ims	    misc.h	powermate.h    wistron
+adxl34x.h  da9063     joydev.h	    mma8450.h	pwm	       wm831x
+apanel.h   drv260x    joystick.h    mousedev	regulator      xen
+arizona    drv2665    keyboard.h    mousedev.h	retu	       yealink.h
+ati	   drv2667    keyspan	    mouse.h	soc
+atlas	   e3x0       kxtj9.h	    mpu3050.h	sparsekmap.h
+axp20x	   evbug.h    leds.h	    palmas	tablet.h
+bma150.h   evdev.h    matrixkmap.h  pcap.h	touchscreen.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/88pm80x:
+onkey.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/88pm860x:
+onkey.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/ad714x:
+i2c.h  spi.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/adxl34x:
+i2c.h  spi.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/arizona:
+haptics.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/ati:
+remote2.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/atlas:
+btns.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/axp20x:
+pek.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/config/input/cma3000:
+i2c.h
+
+./usr/src/linux-headers-4.4.0-46-generic/include/c^C
+salvaromero@ei142165:/$ clear
+[3;J
+salvaromero@ei142165:/$ ls
+bien  cdrom  etc	home	    lib64	media  proc  run   srv	usr
+bin   dev    fenix	initrd.img  libx32	mnt    ro    rw    sys	var
+boot  disco  file-swap	lib	    lost+found	opt    root  sbin  tmp	vmlinuz
+salvaromero@ei142165:/$ cd home
+salvaromero@ei142165:/home$ ls
+operador  salvaromero
+salvaromero@ei142165:/home$ cd salvaromero/
+salvaromero@ei142165:~$ ls
+Desktop    Downloads   Music	 Public     Videos
+Documents  Escritorio  Pictures  Templates
+salvaromero@ei142165:~$ mkdir ejercicio1
+salvaromero@ei142165:~$ cd ejercicio1/
+salvaromero@ei142165:~/ejercicio1$ mkdir Ejer1
+salvaromero@ei142165:~/ejercicio1$ mkdir Ejer2
+salvaromero@ei142165:~/ejercicio1$ mkdir Ejer3
+salvaromero@ei142165:~/ejercicio1$ cd Ejer1
+salvaromero@ei142165:~/ejercicio1/Ejer1$ touch robet202.me
+salvaromero@ei142165:~/ejercicio1/Ejer1$ touch ejer11sol.txt
+salvaromero@ei142165:~/ejercicio1/Ejer1$ touch blue.me
+salvaromero@ei142165:~/ejercicio1/Ejer1$ cd ..
+salvaromero@ei142165:~/ejercicio1$ ls
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1$ cd Ejer
+bash: cd: Ejer: No such file or directory
+salvaromero@ei142165:~/ejercicio1$ cd Ejer2
+salvaromero@ei142165:~/ejercicio1/Ejer2$ touch ejer2arch.txt
+salvaromero@ei142165:~/ejercicio1/Ejer2$ touch ejer2filetags.txt
+salvaromero@ei142165:~/ejercicio1/Ejer2$ touch readme2.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls
+ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer2$ cd ..
+salvaromero@ei142165:~/ejercicio1$ cd Ejer3
+salvaromero@ei142165:~/ejercicio1/Ejer3$ touch ejer3arch.txt
+salvaromero@ei142165:~/ejercicio1/Ejer3$ touch ejer3filetags.txt
+salvaromero@ei142165:~/ejercicio1/Ejer3$ touch readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer3$ cd..
+ccd..: command not found
+salvaromero@ei142165:~/ejercicio1/Ejer3$ cd ..
+salvaromero@ei142165:~/ejercicio1$ cd ..
+salvaromero@ei142165:~$ ls
+Desktop    Downloads   Escritorio  Pictures  Templates
+Documents  ejercicio1  Music	   Public    Videos
+salvaromero@ei142165:~$ cd ejercicio1/
+salvaromero@ei142165:~/ejercicio1$ ls -R
+.:
+Ejer1  Ejer2  Ejer3
+
+./Ejer1:
+blue.me  ejer11sol.txt	robet202.me
+
+./Ejer2:
+ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+./Ejer3:
+ejer3arch.txt  ejer3filetags.txt  readme3.pdf
+salvaromero@ei142165:~/ejercicio1$ clear
+[3;J
+salvaromero@ei142165:~/ejercicio1$ man mkdir
+salvaromero@ei142165:~/ejercicio1$ cd ..
+salvaromero@ei142165:~$ ls
+Desktop    Downloads   Escritorio  Pictures  Templates
+Documents  ejercicio1  Music	   Public    Videos
+salvaromero@ei142165:~$ man touch
+salvaromero@ei142165:~$ cd ejercicio1/
+salvaromero@ei142165:~/ejercicio1$ ls
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1$ cd Ejer1
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls
+blue.me  ejer11sol.txt	robet202.me
+salvaromero@ei142165:~/ejercicio1/Ejer1$ rm *
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls
+salvaromero@ei142165:~/ejercicio1/Ejer1$ mkdir Ejer21
+salvaromero@ei142165:~/ejercicio1/Ejer1$ touch arch100.txt && filetags.txt && practFS.ext && robet201.txt
+filetags.txt: command not found
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls
+arch100.txt  Ejer21
+salvaromero@ei142165:~/ejercicio1/Ejer1$ touch filetags.txt | touch practFS.ext | touch robet201.me
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls
+arch100.txt  Ejer21  filetags.txt  practFS.ext	robet201.me
+salvaromero@ei142165:~/ejercicio1/Ejer1$ man touch
+salvaromero@ei142165:~/ejercicio1/Ejer1$ cd ..
+salvaromero@ei142165:~/ejercicio1$ cd ..
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ cd ejercicio1/
+salvaromero@ei142165:~/ejercicio1$ ls
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1$ touch Ejer1/arch001.txt Ejer1/filetags.txt
+salvaromero@ei142165:~/ejercicio1$ ls
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1$ cd Ejer
+bash: cd: Ejer: No such file or directory
+salvaromero@ei142165:~/ejercicio1$ cd Ejer1
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls
+arch001.txt  arch100.txt  Ejer21  filetags.txt	practFS.ext  robet201.me
+salvaromero@ei142165:~/ejercicio1/Ejer1$ rm arch001.txt 
+salvaromero@ei142165:~/ejercicio1/Ejer1$ cd ..
+salvaromero@ei142165:~/ejercicio1$ cd..
+cd..: command not found
+salvaromero@ei142165:~/ejercicio1$ cd ..
+salvaromero@ei142165:~$ mkdir prueba1 prueba2
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	prueba1  prueba2  Public  Templates  Videos
+salvaromero@ei142165:~$ rm prueba*
+rm: cannot remove 'prueba1': Is a directory
+rm: cannot remove 'prueba2': Is a directory
+salvaromero@ei142165:~$ rmdir prueba*
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ cd ejercicio1/
+salvaromero@ei142165:~/ejercicio1$ ls -R
+.:
+Ejer1  Ejer2  Ejer3
+
+./Ejer1:
+arch100.txt  Ejer21  filetags.txt  practFS.ext	robet201.me
+
+./Ejer1/Ejer21:
+
+./Ejer2:
+ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+./Ejer3:
+ejer3arch.txt  ejer3filetags.txt  readme3.pdf
+salvaromero@ei142165:~/ejercicio1$ touch Ejer1/Ejer21/robet202.me Ejer1/Ejer21/ejer11sol.txt Ejer1/Ejer21/blue.me
+salvaromero@ei142165:~/ejercicio1$ cd Ejer
+bash: cd: Ejer: No such file or directory
+salvaromero@ei142165:~/ejercicio1$ cd Ejer1
+salvaromero@ei142165:~/ejercicio1/Ejer1$ cd Ejer21/
+salvaromero@ei142165:~/ejercicio1/Ejer1/Ejer21$ ls
+blue.me  ejer11sol.txt	robet202.me
+salvaromero@ei142165:~/ejercicio1/Ejer1/Ejer21$ cd ..
+salvaromero@ei142165:~/ejercicio1/Ejer1$ cd ..
+salvaromero@ei142165:~/ejercicio1$ ls -R
+.:
+Ejer1  Ejer2  Ejer3
+
+./Ejer1:
+arch100.txt  Ejer21  filetags.txt  practFS.ext	robet201.me
+
+./Ejer1/Ejer21:
+blue.me  ejer11sol.txt	robet202.me
+
+./Ejer2:
+ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+./Ejer3:
+ejer3arch.txt  ejer3filetags.txt  readme3.pdf
+salvaromero@ei142165:~/ejercicio1$ man cat
+salvaromero@ei142165:~/ejercicio1$ man mvç
+No manual entry for mvç
+salvaromero@ei142165:~/ejercicio1$ man mv
+salvaromero@ei142165:~/ejercicio1$ mv Ejer1/Ejer21 Ejer2/
+salvaromero@ei142165:~/ejercicio1$ ls -R
+.:
+Ejer1  Ejer2  Ejer3
+
+./Ejer1:
+arch100.txt  filetags.txt  practFS.ext	robet201.me
+
+./Ejer2:
+Ejer21	ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+./Ejer2/Ejer21:
+blue.me  ejer11sol.txt	robet202.me
+
+./Ejer3:
+ejer3arch.txt  ejer3filetags.txt  readme3.pdf
+salvaromero@ei142165:~/ejercicio1$ setterm -f
+setterm: option '-f' is ambiguous; possibilities: '--foreground' '--file'
+
+Usage:
+ setterm [options]
+
+Set the attributes of a terminal.
+
+Options:
+ --term          <terminal_name>   override TERM environment variable
+ --reset                           reset terminal to power-on state
+ --initialize                      display init string, and use default settings
+ --default                         use default terminal settings
+ --store                           save current terminal settings as default
+ --cursor        [on|off]          display cursor
+ --repeat        [on|off]          keyboard repeat
+ --appcursorkeys [on|off]          cursor key application mode
+ --linewrap      [on|off]          continue on a new line when a line is full
+ --inversescreen [on|off]          swap colors for the whole screen
+ --foreground    default|<color>   set foreground color
+ --background    default|<color>   set background color
+ --ulcolor       [bright] <color>  set underlined text color
+ --hbcolor       [bright] <color>  set bold text color
+                 <color>: black blue cyan green grey magenta red white yellow
+ --bold          [on|off]          bold
+ --half-bright   [on|off]          dim
+ --blink         [on|off]          blink
+ --underline     [on|off]          underline
+ --reverse       [on|off]          swap foreground and background colors
+ --clear         [all|rest]        clear screen and set cursor position
+ --tabs          [<number>...]     set these tab stop positions, or show them
+ --clrtabs       [<number>...]     clear these tab stop positions, or all
+ --regtabs       [1-160]           set a regular tab stop interval
+ --blank         [0-60|force|poke] set time of inactivity before screen blanks
+ --dump          [<number>]        write vcsa<number> console dump to file
+ --append        [<number>]        append vcsa<number> console dump to file
+ --file          <filename>        name of the dump file
+ --msg           [on|off]          send kernel messages to console
+ --msglevel      0-8               kernel console log level
+ --powersave     [on|vsync|hsync|powerdown|off]
+                                   set vesa powersaving features
+ --powerdown     [0-60]            set vesa powerdown interval in minutes
+ --blength       [0-2000]          duration of the bell in milliseconds
+ --bfreq         <number>          bell frequency in Hertz
+ --version                         show version information and exit
+ --help                            display this help and exit
+
+For more details see setterm(1).
+salvaromero@ei142165:~/ejercicio1$ setterm -r
+setterm: option '-r' is ambiguous; possibilities: '--reset' '--regtabs' '--reverse' '--repeat'
+
+Usage:
+ setterm [options]
+
+Set the attributes of a terminal.
+
+Options:
+ --term          <terminal_name>   override TERM environment variable
+ --reset                           reset terminal to power-on state
+ --initialize                      display init string, and use default settings
+ --default                         use default terminal settings
+ --store                           save current terminal settings as default
+ --cursor        [on|off]          display cursor
+ --repeat        [on|off]          keyboard repeat
+ --appcursorkeys [on|off]          cursor key application mode
+ --linewrap      [on|off]          continue on a new line when a line is full
+ --inversescreen [on|off]          swap colors for the whole screen
+ --foreground    default|<color>   set foreground color
+ --background    default|<color>   set background color
+ --ulcolor       [bright] <color>  set underlined text color
+ --hbcolor       [bright] <color>  set bold text color
+                 <color>: black blue cyan green grey magenta red white yellow
+ --bold          [on|off]          bold
+ --half-bright   [on|off]          dim
+ --blink         [on|off]          blink
+ --underline     [on|off]          underline
+ --reverse       [on|off]          swap foreground and background colors
+ --clear         [all|rest]        clear screen and set cursor position
+ --tabs          [<number>...]     set these tab stop positions, or show them
+ --clrtabs       [<number>...]     clear these tab stop positions, or all
+ --regtabs       [1-160]           set a regular tab stop interval
+ --blank         [0-60|force|poke] set time of inactivity before screen blanks
+ --dump          [<number>]        write vcsa<number> console dump to file
+ --append        [<number>]        append vcsa<number> console dump to file
+ --file          <filename>        name of the dump file
+ --msg           [on|off]          send kernel messages to console
+ --msglevel      0-8               kernel console log level
+ --powersave     [on|vsync|hsync|powerdown|off]
+                                   set vesa powersaving features
+ --powerdown     [0-60]            set vesa powerdown interval in minutes
+ --blength       [0-2000]          duration of the bell in milliseconds
+ --bfreq         <number>          bell frequency in Hertz
+ --version                         show version information and exit
+ --help                            display this help and exit
+
+For more details see setterm(1).
+salvaromero@ei142165:~/ejercicio1$ clear
+[3;J
+salvaromero@ei142165:~/ejercicio1$ $
+$: command not found
+salvaromero@ei142165:~/ejercicio1$ cd Ejer2/Ejer21
+salvaromero@ei142165:~/ejercicio1/Ejer2/Ejer21$ cd ../..
+salvaromero@ei142165:~/ejercicio1$ cd Ejer2/Ejer21
+salvaromero@ei142165:~/ejercicio1/Ejer2/Ejer21$ cd ..
+salvaromero@ei142165:~/ejercicio1/Ejer2$ cd ..
+salvaromero@ei142165:~/ejercicio1$ clear
+[3;J
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+salvaromero@ei142165:~/ejercicio1$ cd Ejer
+bash: cd: Ejer: No such file or directory
+salvaromero@ei142165:~/ejercicio1$ cp Ejer1/*.[x] Ejer3/
+cp: cannot stat 'Ejer1/*.[x]': No such file or directory
+salvaromero@ei142165:~/ejercicio1$ cd Ejer1
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls -l *.[x]
+ls: cannot access '*.[x]': No such file or directory
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls
+arch100.txt  filetags.txt  practFS.ext	robet201.me
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls -l *.[ch]
+ls: cannot access '*.[ch]': No such file or directory
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls -l *.[x]
+ls: cannot access '*.[x]': No such file or directory
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls -l *.x
+ls: cannot access '*.x': No such file or directory
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls -l *.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:59 arch100.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:03 filetags.txt
+salvaromero@ei142165:~/ejercicio1/Ejer1$ ls -l *.*x*
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:59 arch100.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:03 filetags.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:00 practFS.ext
+salvaromero@ei142165:~/ejercicio1/Ejer1$ cd ..
+salvaromero@ei142165:~/ejercicio1$ cp Ejer1/*.*x* Ejer3/
+salvaromero@ei142165:~/ejercicio1$ ls Ejer3
+arch100.txt  ejer3arch.txt  ejer3filetags.txt  filetags.txt  practFS.ext  readme3.pdf
+salvaromero@ei142165:~/ejercicio1$ cd ..
+salvaromero@ei142165:~$ cd Ejer2
+bash: cd: Ejer2: No such file or directory
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ cd ejercicio1/
+salvaromero@ei142165:~/ejercicio1$ cd Ejer2
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls
+Ejer21	ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer2$ clear
+[3;J
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls -la ../Ejer3/*arch
+ls: cannot access '../Ejer3/*arch': No such file or directory
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls -la ../Ejer3/*arch*
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 ../Ejer3/arch100.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 ../Ejer3/ejer3arch.txt
+salvaromero@ei142165:~/ejercicio1/Ejer2$ man ls
+salvaromero@ei142165:~/ejercicio1/Ejer2$ cd ..
+salvaromero@ei142165:~/ejercicio1$ touch Ejer3/prueba.arch
+salvaromero@ei142165:~/ejercicio1$ cd Ejer2
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls -la ../Ejer3/*arch*
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 ../Ejer3/arch100.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 ../Ejer3/ejer3arch.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:26 ../Ejer3/prueba.arch
+salvaromero@ei142165:~/ejercicio1/Ejer2$ cd ../Ejer3
+salvaromero@ei142165:~/ejercicio1/Ejer3$ rm prueba.arch 
+salvaromero@ei142165:~/ejercicio1/Ejer3$ ls
+arch100.txt  ejer3arch.txt  ejer3filetags.txt  filetags.txt  practFS.ext  readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer3$ cd..
+cd..: command not found
+salvaromero@ei142165:~/ejercicio1/Ejer3$ cd ../Ejer2
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls -la ../Ejer3/*arch*
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 ../Ejer3/arch100.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 ../Ejer3/ejer3arch.txt
+salvaromero@ei142165:~/ejercicio1/Ejer2$ clear
+[3;J
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls ../
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls -Ra ../
+../:
+.  ..  Ejer1  Ejer2  Ejer3
+
+../Ejer1:
+.  ..  arch100.txt  filetags.txt  practFS.ext  robet201.me
+
+../Ejer2:
+.  ..  Ejer21  ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+../Ejer2/Ejer21:
+.  ..  blue.me	ejer11sol.txt  robet202.me
+
+../Ejer3:
+.  ..  arch100.txt  ejer3arch.txt  ejer3filetags.txt  filetags.txt  practFS.ext  readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls ../
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1/Ejer2$ man ls
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls ..//*
+..//Ejer1:
+arch100.txt  filetags.txt  practFS.ext	robet201.me
+
+..//Ejer2:
+Ejer21	ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+..//Ejer3:
+arch100.txt  ejer3arch.txt  ejer3filetags.txt  filetags.txt  practFS.ext  readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls ../:/*
+ls: cannot access '../:/*': No such file or directory
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls ..//*
+..//Ejer1:
+arch100.txt  filetags.txt  practFS.ext	robet201.me
+
+..//Ejer2:
+Ejer21	ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+..//Ejer3:
+arch100.txt  ejer3arch.txt  ejer3filetags.txt  filetags.txt  practFS.ext  readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls ../*
+../Ejer1:
+arch100.txt  filetags.txt  practFS.ext	robet201.me
+
+../Ejer2:
+Ejer21	ejer2arch.txt  ejer2filetags.txt  readme2.pdf
+
+../Ejer3:
+arch100.txt  ejer3arch.txt  ejer3filetags.txt  filetags.txt  practFS.ext  readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer2$ claer
+No command 'claer' found, did you mean:
+ Command 'clear' from package 'ncurses-bin' (main)
+claer: command not found
+salvaromero@ei142165:~/ejercicio1/Ejer2$ clear
+[3;J
+salvaromero@ei142165:~/ejercicio1/Ejer2$ man ls
+salvaromero@ei142165:~/ejercicio1/Ejer2$ cd ..
+salvaromero@ei142165:~/ejercicio1$ cd Ejer2
+salvaromero@ei142165:~/ejercicio1/Ejer2$  echo ../(*^/)
+bash: syntax error near unexpected token `('
+salvaromero@ei142165:~/ejercicio1/Ejer2$ man ls
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls -p ../ | grep -v
+Usage: grep [OPTION]... PATTERN [FILE]...
+Try 'grep --help' for more information.
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls -p ../ | grep -v /
+salvaromero@ei142165:~/ejercicio1/Ejer2$ man grep
+salvaromero@ei142165:~/ejercicio1/Ejer2$ man ls
+salvaromero@ei142165:~/ejercicio1/Ejer2$ cd ..
+salvaromero@ei142165:~/ejercicio1$ ls
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1$ cd Ejer3
+salvaromero@ei142165:~/ejercicio1/Ejer3$ ls -l
+total 0
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 arch100.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 ejer3arch.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 ejer3filetags.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 filetags.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 practFS.ext
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer3$ touch ejer3arch.txt 
+salvaromero@ei142165:~/ejercicio1/Ejer3$ ls -l
+total 0
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 arch100.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:45 ejer3arch.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 ejer3filetags.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 filetags.txt
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 18:22 practFS.ext
+-rw-r--r-- 1 salvaromero alumno 0 feb 18 17:54 readme3.pdf
+salvaromero@ei142165:~/ejercicio1/Ejer3$ cd ..
+salvaromero@ei142165:~/ejercicio1$ cd ..
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ cd ..
+salvaromero@ei142165:/home$ ls
+operador  salvaromero
+salvaromero@ei142165:/home$ pwd
+/home
+salvaromero@ei142165:/home$ cd salvaromero/
+salvaromero@ei142165:~$ pwd
+/home/salvaromero
+salvaromero@ei142165:~$ man pwd
+salvaromero@ei142165:~$ cd ..
+salvaromero@ei142165:/home$ pwd -P
+/home
+salvaromero@ei142165:/home$ cd -L
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ cd ..
+salvaromero@ei142165:/home$ man pwd
+salvaromero@ei142165:/home$ pwd -L
+/home
+salvaromero@ei142165:/home$ pwd -P
+/home
+salvaromero@ei142165:/home$ man ls
+salvaromero@ei142165:/home$ cd salvaromero/ejercicio1/Ejer2
+salvaromero@ei142165:~/ejercicio1/Ejer2$ ls ../
+Ejer1  Ejer2  Ejer3
+salvaromero@ei142165:~/ejercicio1/Ejer2$ cd ..
+salvaromero@ei142165:~/ejercicio1$ mkdir carpeta carpeta/otra
+salvaromero@ei142165:~/ejercicio1$ rmdir carpeta/
+rmdir: failed to remove 'carpeta/': Directory not empty
+salvaromero@ei142165:~/ejercicio1$ cd carpeta/
+salvaromero@ei142165:~/ejercicio1/carpeta$ rmdir otra
+salvaromero@ei142165:~/ejercicio1/carpeta$ cd ..
+salvaromero@ei142165:~/ejercicio1$ rmdir carpeta/
+salvaromero@ei142165:~/ejercicio1$ cd ..
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ cd Escritorio/
+salvaromero@ei142165:~/Escritorio$ ls
+Departamentos  Home
+salvaromero@ei142165:~/Escritorio$ cd Home
+salvaromero@ei142165:~/Escritorio/Home$ ls
+FP  FS	MP  Practica 3 FFT.xlsx  prueba.clf
+salvaromero@ei142165:~/Escritorio/Home$ cd FS
+salvaromero@ei142165:~/Escritorio/Home/FS$ ls
+Practica1.txt
+salvaromero@ei142165:~/Escritorio/Home/FS$ cd ..
+salvaromero@ei142165:~/Escritorio/Home$ cd ..
+salvaromero@ei142165:~/Escritorio$ cd ..
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ mkdir MP
+salvaromero@ei142165:~$ mkdir FS
+salvaromero@ei142165:~$ mkdir MP/Practica_1
+salvaromero@ei142165:~$ mkdir FS/Practica_1
+salvaromero@ei142165:~$ cd ..
+salvaromero@ei142165:/home$ ls
+operador  salvaromero
+salvaromero@ei142165:/home$ cd ..
+salvaromero@ei142165:/$ cd ..
+salvaromero@ei142165:/$ ls
+bien  bin  boot  cdrom	dev  disco  etc  fenix	file-swap  home  initrd.img  lib  lib64  libx32  lost+found  media  mnt  opt  proc  ro	root  run  rw  sbin  srv  sys  tmp  usr  var  vmlinuz
+salvaromero@ei142165:/$ cd etc
+salvaromero@ei142165:/etc$ ls
+acpi			ca-certificates       docker		  gss		   ld.so.conf	   modprobe.d	    pki			     rpc		texmf
+adduser.conf		ca-certificates.conf  dpkg		  gtk-2.0	   ld.so.conf.d    modules	    pm			     rsyslog.conf	thermald
+adjtime			calendar	      drirc		  gtk-3.0	   legal	   modules-load.d   pnm2ppa.conf	     rsyslog.d		thunderbird
+alternatives		chatscripts	      emacs		  guest-session    libao.conf	   mplayer	    polkit-1		     sane.d		timezone
+anacrontab		click		      emacs24		  hdparm.conf	   libaudit.conf   mtab		    popularity-contest.conf  screenrc		tmpfiles.d
+apache2			compizconfig	      environment	  host.conf	   libgda-5.0	   mtools.conf	    ppp			     securetty		ubu16
+apg.conf		complete.tcsh	      epoptes		  hostname	   libnl-3	   mysql	    presage.xml		     security		ucf.conf
+apm			console-setup	      esound		  hosts		   libpaper.d	   nanorc	    printcap		     selinux		udev
+apparmor		cracklib	      firefox		  hosts.allow	   libreoffice	   netconfig	    profile		     sensors3.conf	udisks2
+apparmor.d		cron.d		      fonts		  hosts.deny	   lightdm	   network	    profile.d		     sensors.d		ufw
+apport			cron.daily	      fstab		  hp		   lighttpd	   NetworkManager   protocols		     services		uniconf.conf
+appstream.conf		cron.hourly	      fstab.systemd	  idmapd.conf	   lintianrc	   networks	    pulse		     sgml		updatedb.conf
+apt			cron.monthly	      fuse.conf		  ifplugd	   locale.alias    newt		    purple		     shadow		update-manager
+aptdaemon		crontab		      fwupd.conf	  iftab		   locale.gen	   nsswitch.conf    python		     shadow-		update-motd.d
+at-spi2			cron.weekly	      gai.conf		  ImageMagick-6    localtime	   ntp.conf	    python2.7		     shells		update-notifier
+autofs.conf		csh		      gconf		  init		   logcheck	   octave.conf	    python3		     signond.conf	UPower
+auto.master		csh.cshrc	      gdb		  init.d	   login.defs	   ODBCDataSources  python3.5		     signon-ui		upstart-xsessions
+auto.misc		csh.login	      ghostscript	  initramfs-tools  logrotate.conf  odbc.ini	    qemu-ifdown		     skel		urfkill
+automount		csh.logout	      gimp		  inputrc	   logrotate.d	   odbcinst.ini     qemu-ifup		     sound		usb_modeswitch.conf
+auto.net		cups		      gnashpluginrc	  insserv	   lsb-release	   ofono	    rc0.d		     speech-dispatcher	usb_modeswitch.d
+auto.smb		cupshelpers	      gnashrc		  insserv.conf	   ltrace.conf	   openal	    rc1.d		     ssh		util
+avahi			dbus-1		      gnashthumbnailrc	  insserv.conf.d   lxdm		   OpenCL	    rc2.d		     ssl		vdpau_wrapper.cfg
+bash.bashrc		dconf		      gnome		  iproute2	   machine-id	   openvpn	    rc3.d		     subgid		vim
+bash_completion		debconf.conf	      gnome-app-install   issue		   magic	   opt		    rc4.d		     subgid-		vtrgb
+bash_completion.d	debian_version	      gnome-system-tools  issue.net	   magic.mime	   os-release	    rc5.d		     subuid		wgetrc
+bindresvport.blacklist	default		      gnome-vfs-2.0	  java		   mailcap	   PackageKit	    rc6.d		     subuid-		wpa_supplicant
+binfmt.d		deluser.conf	      gps.conf		  java-8-openjdk   mailcap.order   pam.conf	    rc.local		     sudoers		wvdial.conf
+bluetooth		depmod.d	      groff		  kbd		   manpath.config  pam.d	    rcS.d		     sudoers.d		X11
+bonobo-activation	dhcp		      group		  kernel	   matplotlibrc    papersize	    request-key.conf	     syncwidget		xdg
+brlapi.key		dictionaries-common   group-		  kernel-img.conf  menu-methods    passwd	    request-key.d	     sysctl.conf	xml
+brltty			dkms		      grub.d		  kerneloops.conf  mercurial	   passwd-	    resolvconf		     sysctl.d		zsh_command_not_found
+brltty.conf		dnsmasq.d	      gshadow		  ldap		   mime.types	   pcmcia	    resolv.conf		     systemd
+buteo			doc-base	      gshadow-		  ld.so.cache	   mke2fs.conf	   perl		    rmt			     terminfo
+salvaromero@ei142165:/etc$ clear
+[3;J
+salvaromero@ei142165:/etc$ cd ..
+salvaromero@ei142165:/$ ls
+bien  bin  boot  cdrom	dev  disco  etc  fenix	file-swap  home  initrd.img  lib  lib64  libx32  lost+found  media  mnt  opt  proc  ro	root  run  rw  sbin  srv  sys  tmp  usr  var  vmlinuz
+salvaromero@ei142165:/$ cd home
+salvaromero@ei142165:/home$ cd salvaromero/
+salvaromero@ei142165:~$ cp ../../etc/hosts /FS/Practica_1
+cp: cannot create regular file '/FS/Practica_1': No such file or directory
+salvaromero@ei142165:~$ cp ../../etc/hosts home^CS/Practica_1
+salvaromero@ei142165:~$ ls
+Desktop  Documents  Downloads  ejercicio1  Escritorio  FS  MP  Music  Pictures	Public	Templates  Videos
+salvaromero@ei142165:~$ cd FS
+salvaromero@ei142165:~/FS$ ls
+Practica_1
+salvaromero@ei142165:~/FS$ c..
+c..: command not found
+salvaromero@ei142165:~/FS$ cd ..
+salvaromero@ei142165:~$ cp ../../etc/hosts Fs/Practica_1
+cp: cannot create regular file 'Fs/Practica_1': No such file or directory
+salvaromero@ei142165:~$ cp ../../etc/hosts FS/Practica_1
+salvaromero@ei142165:~$ cp ../../etc/passwd FS/Practica_1
+salvaromero@ei142165:~$ cd FS/Practica_1/
+salvaromero@ei142165:~/FS/Practica_1$ ls
+hosts  passwd
+salvaromero@ei142165:~/FS/Practica_1$ cat hosts 
+127.0.0.1	localhost
+127.0.1.1	ei142165
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+172.18.140.10 bacus0.ugr.es bacus0
+172.18.140.11 venus0.ugr.es venus0
+172.18.140.12 lepus0.ugr.es lepus0
+172.18.140.13 cetus0.ugr.es cetus0
+172.18.140.14 fenix0.ugr.es fenix0
+172.18.140.15 sepus0.ugr.es sepus0
+172.18.140.16 pirus0.ugr.es pirus0
+172.18.142.10 backup-etsiit2.ugr.es backup-etsiit2
+172.18.142.11 venus2.ugr.es venus2
+172.18.142.12 lepus2.ugr.es lepus2
+172.18.142.13 cetus2.ugr.es cetus2
+172.18.142.14 fenix2.ugr.es fenix2
+172.18.142.15 sepus2.ugr.es sepus2
+172.18.142.16 pirus2.ugr.es pirus2
+# Maquinas de los departamentos y necesarias para examen
+150.214.190.179 lsi.ugr.es lsi
+150.214.191.180 decsai.ugr.es decsai
+#150.214.204.16 prado.ugr.es prado
+#150.214.204.15 idp.ugr.es idp
+salvaromero@ei142165:~/FS/Practica_1$ cat passwd 
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+syslog:x:104:108::/home/syslog:/bin/false
+_apt:x:105:65534::/nonexistent:/bin/false
+messagebus:x:106:110::/var/run/dbus:/bin/false
+uuidd:x:107:111::/run/uuidd:/bin/false
+lightdm:x:108:114:Light Display Manager:/var/lib/lightdm:/bin/false
+whoopsie:x:109:116::/nonexistent:/bin/false
+avahi-autoipd:x:110:119:Avahi autoip daemon,,,:/var/lib/avahi-autoipd:/bin/false
+avahi:x:111:120:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+dnsmasq:x:112:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+colord:x:113:123:colord colour management daemon,,,:/var/lib/colord:/bin/false
+speech-dispatcher:x:114:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+hplip:x:115:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+kernoops:x:116:65534:Kernel Oops Tracking Daemon,,,:/:/bin/false
+pulse:x:117:124:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+rtkit:x:118:126:RealtimeKit,,,:/proc:/bin/false
+saned:x:119:127::/var/lib/saned:/bin/false
+usbmux:x:120:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+operador:x:1000:1000:operador,,,:/home/operador:/bin/bash
+usermetrics:x:121:129:User Metrics:/var/lib/usermetrics:/bin/false
+clickpkg:x:122:130::/nonexistent:/bin/false
+nm-openvpn:x:123:131:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/bin/false
+ntp:x:124:132::/home/ntp:/bin/false
+lxd:x:125:65534::/var/lib/lxd/:/bin/false
+mysql:x:999:50001::/home/mysql:
+salvaromero:x:1472:1500:SALVADOR ROMERO CORTES:/home/salvaromero:/bin/bash
+salvaromero@ei142165:~/FS/Practica_1$ clear
+[3;J
+salvaromero@ei142165:~/FS/Practica_1$ mkdir Sesion.1 Sesion.10 Sesion.2 Sesion.4 Sesion.27 Prueba.1 Sintaxis.2
+salvaromero@ei142165:~/FS/Practica_1$ ls
+hosts  passwd  Prueba.1  Sesion.1  Sesion.10  Sesion.2	Sesion.27  Sesion.4  Sintaxis.2
+salvaromero@ei142165:~/FS/Practica_1$ rmdir Sesion.4
+salvaromero@ei142165:~/FS/Practica_1$ ls
+hosts  passwd  Prueba.1  Sesion.1  Sesion.10  Sesion.2	Sesion.27  Sintaxis.2
+salvaromero@ei142165:~/FS/Practica_1$ ls Sesion.?
+Sesion.1:
+
+Sesion.2:
+salvaromero@ei142165:~/FS/Practica_1$ mkdir Sesion.3
+salvaromero@ei142165:~/FS/Practica_1$ ls
+hosts  passwd  Prueba.1  Sesion.1  Sesion.10  Sesion.2	Sesion.27  Sesion.3  Sintaxis.2
+salvaromero@ei142165:~/FS/Practica_1$ ls *.1
+Prueba.1:
+
+Sesion.1:
+salvaromero@ei142165:~/FS/Practica_1$ ls *.[12]
+Prueba.1:
+
+Sesion.1:
+
+Sesion.2:
+
+Sintaxis.2:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*
+Sesion.1:
+
+Sesion.10:
+
+Sesion.2:
+
+Sesion.27:
+
+Sesion.3:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*2
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*2*
+Sesion.2:
+
+Sesion.27:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2*
+Sesion.2:
+
+Sesion.27:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2
+salvaromero@ei142165:~/FS/Practica_1$ ls *[si]*
+hosts  passwd
+
+Sesion.1:
+
+Sesion.10:
+
+Sesion.2:
+
+Sesion.27:
+
+Sesion.3:
+
+Sintaxis.2:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*
+Sesion.1:
+
+Sesion.10:
+
+Sesion.2:
+
+Sesion.27:
+
+Sesion.3:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2*
+Sesion.2:
+
+Sesion.27:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*
+Sesion.1:
+
+Sesion.10:
+
+Sesion.2:
+
+Sesion.27:
+
+Sesion.3:
+salvaromero@ei142165:~/FS/Practica_1$ ls *[si]*
+hosts  passwd
+
+Sesion.1:
+
+Sesion.10:
+
+Sesion.2:
+
+Sesion.27:
+
+Sesion.3:
+
+Sintaxis.2:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2*
+Sesion.2:
+
+Sesion.27:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2*
+Sesion.2:
+
+Sesion.27:
+salvaromero@ei142165:~/FS/Practica_1$ ls *[s]i*.2*
+Sesion.2:
+
+Sesion.27:
+salvaromero@ei142165:~/FS/Practica_1$ ls *[s]i*.2
+salvaromero@ei142165:~/FS/Practica_1$ ls *[si]*.2
+Sesion.2:
+
+Sintaxis.2:
+salvaromero@ei142165:~/FS/Practica_1$ ls
+hosts  passwd  Prueba.1  rauz  Sesion.1  Sesion.10  Sesion.2  Sesion.27  Sesion.3  Sintaxis.2
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*
+Sesion.1:
+
+Sesion.10:
+
+Sesion.2:
+
+Sesion.27:
+
+Sesion.3:
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2
+salvaromero@ei142165:~/FS/Practica_1$ ls -d *si*.2
+Sesion.2
+salvaromero@ei142165:~/FS/Practica_1$ ls *si*.2
+salvaromero@ei142165:~/FS/Practica_1$ ls -d *si*.2
+Sesion.2
+salvaromero@ei142165:~/FS/Practica_1$ 
+

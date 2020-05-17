@@ -1,0 +1,43 @@
+#!/bin/bash
+# Título: 	repaso-guion
+# Autor: 	Salvador Romero Cortés
+# Fecha: 	16/04/2020
+# Versión: 	1.0
+# Opciones:	ninguna
+# Uso:		repaso-guion <nombre_directorio> <letra> <palabra>
+# Descripción:	Este guion busca el tercer argumento de manera recursiva en el directorio indicado en el primer argumento.
+#		También lista los directorios/ficheros (segun el segundo argumento) del directorio indicado. 
+#		Todos los resultados se guardan en un archivo llamado resultado
+
+
+# funcion para mostrar la informacion de ayuda sobre el uso del guión
+_ayuda(){
+	printf "Uso incorrecto.\nEl uso correcto es repaso-guion <nombre_directorio> <letra> <palabra>.\nLa letra es f para archivos o d para directorios.\n"
+	exit 1
+}
+
+# comprobamos los argumentos y creamos el directorio si no existe
+if [ $# -ne 3 ]; then _ayuda; fi
+if [ $2 != f -a $2 != d ]; then _ayuda;fi
+
+if [ ! -d $1 ]; then
+	echo "No existe el directorio $1, se crea"
+	mkdir $1
+fi
+
+# encontramos de manera recursiva en el directorio dado y guardamos en un archivo las lineas y el nombre del archivo.
+echo "Buscando \"$3\"..."
+echo "Resultados de búsqueda" > resultado
+grep -nr $3 $1 | cat >> resultado
+
+# buscamos fichero o directorio en funcion de la entrada.
+if [ $2 == f ]; then 
+	echo -e "\nListado de ficheros" >> resultado 
+	echo "Listando ficheros..."
+else  
+	echo -e "\nListado de directorios" >> resultado 
+	echo "Listando directorios..."
+fi 
+
+find $1 -type $2 >> resultado
+echo "Hecho, comprobar archivo \"resultado\""

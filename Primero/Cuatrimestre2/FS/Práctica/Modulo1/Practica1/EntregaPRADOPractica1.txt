@@ -1,0 +1,9 @@
+Ejercicio 1
+mkdir mnt home home/luis home/pedro
+touch home/luis/Carta.txt
+
+Ejercicio 2
+rm luis/Carta.txt
+
+Ejercicio 3
+ls C*.*x

@@ -1,0 +1,10 @@
+#!/bin/bash
+read -p "Introduce el nombre de la shell: " shell
+cat /etc/shells | grep -q $shell && ok=0 || ok=1
+if [ $ok == 0 ];
+then
+	echo "Los usuarios con esta shell son: "
+	cat /etc/passwd | grep $shell | cut -d ':' -f1
+else 
+	echo "No se ha encontrado la shell $shell"
+fi

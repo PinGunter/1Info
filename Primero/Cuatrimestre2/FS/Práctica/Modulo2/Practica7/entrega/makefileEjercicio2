@@ -1,0 +1,29 @@
+# Archivo makefile Ejercicio2.4 - Makefile final del ejercicio 2
+# Uso: make -f makefileEjercicio2
+
+INCLUDE_DIR=./
+CC=g++
+
+Practica7: main2.o hello.o factorial.o libmath.a
+	$(CC) -L./ -o $@ $^
+
+main2.o: main2.cpp $(INCLUDE_DIR)functions.h $(INCLUDE_DIR)mates.h
+	$(CC) -c $^
+
+hello.o: hello.cpp $(INCLUDE_DIR)functions.h
+	$(CC) -c $^
+
+factorial.o: factorial.cpp $(INCLUDE_DIR)functions.h
+	$(CC) -c $^
+
+tan.o: tan.cpp $(INCLUDE_DIR)mates.h
+	$(CC) -c $^
+
+cos.o: cos.cpp $(INCLUDE_DIR)mates.h
+	$(CC) -c $^
+
+sin.o: sin.cpp $(INCLUDE_DIR)mates.h
+	$(CC) -c $^
+
+libmath.a: tan.o cos.o sin.o
+	ar -rvs libmath.a $^

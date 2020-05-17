@@ -1,0 +1,12 @@
+#!/bin/bash
+# Titulo:	practica3
+# Fecha: 	03/03/2020
+# Autor:	Salvador Romero Cortés
+# Versión: 	1.0
+# Descripción	Muestra los archivos de un directorio que ha sido accedido en los ultimos x dias
+		
+# Opciones:	Ninguna
+# Uso:		practica3 directorio dias
+
+printf "Los archivos del directorio $1 que han sido accedidos en los últimos $2 días son:\n"
+find $1 -atime -$2

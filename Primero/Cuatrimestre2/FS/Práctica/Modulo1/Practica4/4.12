@@ -1,0 +1,11 @@
+#!/bin/bash
+# $1 ruta relativa del archivo a buscar
+# $2 ruta absoluta del directorio a buscar
+
+if [[ -f $PWD/$1 ]]; then
+	printf "El archivo $1 existe\n";	
+elif [[ -d $2 ]];then
+	printf "El archivo $1 no existe, $2 es un directorio\n";
+else
+	printf "El archivo $1 no existe y $2 no es un directorio\n";
+fi

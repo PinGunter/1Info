@@ -1,0 +1,25 @@
+#!/bin/bash
+# Titulo: 		EntregaPractica4.2
+# Fecha: 		24/03/2020
+# Autor: 		Salvador Romero Cortés
+# Descripción: 		Haciendo uso de las órdenes conocidas hasta el momento, construya un guion que admita dos
+#			parámetros, que compare por separado si el primer parámetro que se le pasa es igual al
+#			segundo, o es menor, o es mayor, y que informe tanto del valor de cada uno de los parámetros
+#			como del resultado de cada una de las evaluaciones mostrando un 0 o un 1 según corresponda.
+# Uso:			EntregaPractica4.2 <numero> <numero>
+# Opciones:		Ninguna
+
+
+
+#informamos de los valores de cada parametro
+printf "Variables\tValores\nParámetro1\t%4i\nParámetro2\t%4i\n\n\n" $1 $2
+
+#comparamos por separado
+#parametro 1 menor que parametro 2
+echo "$1 es menor que $2 --> `if [[ $1 < $2 ]]; then echo 1; else echo 0; fi`"
+
+#parametro 1 igual que parametro 2
+echo "$1 es igual que $2 --> `if [[ $1 == $2 ]]; then echo 1; else echo 0; fi`"
+
+#parametro 1 mayor que parametro 2
+echo "$1 es mayor que $2 --> `if [[ $1 > $2 ]]; then echo 1; else echo 0; fi`"

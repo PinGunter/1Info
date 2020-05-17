@@ -1,0 +1,7 @@
+Introduce la frase:
+Introduce el numero de la palabra cuya posicion quieres conocer: 
+La frase que has introducido es:     h o l a   b u e n a s    tardes m     
+La posicion de la palabra 1 es 4
+
+La frase sin los blancos iniciales queda como: | h o l a   b u e n a s    tardes m        |
+La frase sin los blancos finales queda como: |    h o l a   b u e n a s    |

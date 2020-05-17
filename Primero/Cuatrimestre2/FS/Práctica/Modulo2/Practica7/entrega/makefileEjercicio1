@@ -1,0 +1,27 @@
+# Archivo makefile Ejercicio1.4 - Makefile final del ejercicio 1
+# Uso: make -f makefileEjercicio1
+
+
+Practica7: main2.o hello.o factorial.o libmath.a
+	g++ -L./ -o Practica7 main2.o hello.o factorial.o -lmath
+
+main2.o: main2.cpp functions.h mates.h
+	g++ -c main2.cpp
+
+hello.o: hello.cpp functions.h
+	g++ -c hello.cpp
+
+factorial.o: factorial.cpp functions.h
+	g++ -c factorial.cpp
+
+tan.o: tan.cpp mates.h
+	g++ -c tan.cpp
+
+cos.o: cos.cpp mates.h
+	g++ -c cos.cpp
+
+sin.o: sin.cpp mates.h
+	g++ -c sin.cpp
+
+libmath.a: tan.o cos.o sin.o
+	ar -rvs libmath.a sin.o cos.o tan.o

@@ -1,0 +1,14 @@
+Introduce un numero --> 6
+
+i: 6
+28
+
+i: 28
+496
+
+i: 496
+8128
+
+i: 8128
+
+El numero perfecto mas grande menor a 10000 es 8128

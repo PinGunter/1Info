@@ -1,0 +1,4 @@
+#!/bin/bash
+printf "Introduzca el nombre de archivo:"
+read ARCHIVO_INPUT
+printf "\nEl nombre del archivo es: %s\n" $ARCHIVO_INPUT

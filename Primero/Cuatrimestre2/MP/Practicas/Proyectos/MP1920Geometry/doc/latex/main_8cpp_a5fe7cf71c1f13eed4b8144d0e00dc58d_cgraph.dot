@@ -1,0 +1,15 @@
+digraph "isInside"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="isInside",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Rectangle::getTopLeft",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#a6aeadc63b82f3c2efbbbd57041fb32e3",tooltip="Queries the top-left corner. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Point2D::getX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#a6cff00d11a53dc1af436225f02bc324b",tooltip="Queries the X coordinate. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Rectangle::getBottomRight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#aa08d26c1548936bf1e6365f08f35cb27",tooltip="Queries the bottom-right corner. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Point2D::getY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#a1b9e163b3642485c46a1f68c54d735fc",tooltip="Queries the Y coordinate. "];
+}

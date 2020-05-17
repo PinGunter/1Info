@@ -1,0 +1,12 @@
+#!/bin/bash
+if [[ -O $1 ]]; then
+	printf "Somos el dueño de $1\n"
+else
+	printf "No somos el dueño de $1\n"
+fi
+
+if [[ -r $1 ]]; then
+	printf "Tenemos permiso de lectura para $1\n"
+else
+	printf "No tenemos permiso de lectura para $1\n"
+fi

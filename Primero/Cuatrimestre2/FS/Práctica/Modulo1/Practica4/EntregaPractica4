@@ -1,0 +1,35 @@
+#!/bin/bash
+# Título:		EntregaPractica4
+# Fecha: 		10/3/2020
+# Autor: 		Salvador Romero
+# Versión: 		1.0
+# Descripción: 		En caso de que los dos argumentos sean numeros e iguales muestra los
+#			contenidos del directorio actual, así como el path. Si son distintos, 
+#			el del directorio HOME. Si no son numeros no hace nada.
+# Opciones: 		ninguna
+# Uso: 			EntregaPractica4 numero1 numero2
+
+numero='^[0-9]+$'
+if ! [[ $1 =~ $numero ]] ; then
+	printf "El argumento %s no es un numero\n" $1
+	valido1=0
+fi
+
+if ! [[ $2 =~ $numero ]] ; then
+	printf "El argumento %s no es un numero\n" $2
+	valido2=0
+fi
+
+if [[ $1 =~ $numero ]] && [[ $2 =~ $numero ]];then
+	if [ $1 == $2 ]; then
+		actual=`pwd | ls`
+		echo "Los archivos del directorio actual son: " $actual			
+		printf "\nEl directorio actual es: " 
+		pwd
+	else
+		archivos=`ls ~`
+		echo "Los archivos del directorio home son: " $actual			
+		echo $archivos				
+		printf "\nEl directorio home es: %s\n" $HOME 
+	fi
+fi

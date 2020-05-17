@@ -1,0 +1,28 @@
+#! /bin/bash
+# statgen -- Luke Th. Bullock - Thu Dec 14 11:04:18 MET 2000
+#
+_STAT=status.html
+echo "<html><title>`hostname` Status</title>" > $_STAT
+echo "<body bgcolor=white><font color=slategray>" >> $_STAT
+echo "<h2>`hostname` status <font size=-1>(updated every 1/2 hour) </h2></font></font>" >> $_STAT
+echo "<pre>" >> $_STAT
+echo "<b>Date:</b> `date`" >> $_STAT
+echo >> $_STAT
+echo "<b>Kernel:</b>" >> $_STAT
+uname -a >> $_STAT
+echo >> $_STAT
+echo "<b>Uptime:</b>" >> $_STAT
+uptime >> $_STAT
+echo >> $_STAT
+echo "<b>Memory Usage:</b>" >> $_STAT
+free >> $_STAT
+echo >> $_STAT
+echo "<b>Disk Usage:</b>" >> $_STAT
+df -h >> $_STAT
+echo >> $_STAT
+echo "<b>TCP connections:</b>" >> $_STAT
+netstat -t >> $_STAT
+echo >> $_STAT
+echo "<b>Users logged in</b> (not showing processes):" >> $_STAT
+w -hus >> $_STAT
+echo "</pre>" >> $_STAT

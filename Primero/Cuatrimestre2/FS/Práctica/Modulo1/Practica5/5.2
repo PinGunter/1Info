@@ -1,0 +1,11 @@
+#!/bin/bash
+# $1 es un directorio existente
+
+if [[ -d $1 ]]; then
+	for i in `ls $1`;
+	do
+		echo "$i: "`file $1/$i --brief`
+	done
+else
+	echo "$1 no es un directorio válido"
+fi

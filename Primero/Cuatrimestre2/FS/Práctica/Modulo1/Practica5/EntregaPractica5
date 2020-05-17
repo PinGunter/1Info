@@ -1,0 +1,26 @@
+#!/bin/bash
+# Título:		EntregaPractica5
+# Fecha: 		31/3/2020
+# Autor: 		Salvador Romero
+# Versión: 		1.0
+# Descripción: 		Este script muestra 4 opciones:
+#			1) Sumar números
+#			2) Restar números
+# 			3) Multiplicar números
+# 			4) Salir
+#			Cada opcion pedirá al usuario dos números y hará la operación correspondiente
+# Opciones: 		ninguna
+# Uso: 			EntregaPractica5
+while :
+do
+	printf "\nSeleccione opción\n1 = Sumar números\n2 = Restar números\n3 = Multiplicar números\n4 = Salir\n"
+	read respuesta
+	case $respuesta in
+		1) read -p "Introduce el primer numero: " numero1; read -p "Introduce el segundo número: " numero2;printf "Los números que se han introducido son %i y %i\n" $numero1 $numero2; echo "La suma es `expr $numero1 + $numero2`" ;;
+		2) read -p "Introduce el primer numero: " numero1; read -p "Introduce el segundo número: " numero2;printf "Los números que se han introducido son %i y %i\n" $numero1 $numero2;echo "La diferencia es `expr $numero1 - $numero2`" ;;
+		3) read -p "Introduce el primer numero: " numero1; read -p "Introduce el segundo número: " numero2;printf "Los números que se han introducido son %i y %i\n" $numero1 $numero2;echo "El producto es `expr $numero1 \* $numero2`" ;;
+		4) echo "Saliendo del programa..."; break;;
+		*) echo "Opcion no valida";;
+	esac
+	sleep 2  #espera 2 segundos antes de volver a preguntar
+done

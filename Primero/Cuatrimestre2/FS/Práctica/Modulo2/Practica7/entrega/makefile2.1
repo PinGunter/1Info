@@ -1,0 +1,28 @@
+# Archivo makefile Ejercicio2.1
+# Uso: make -f makefile2.1
+
+INCLUDE_DIR=./
+
+Practica7: main2.o hello.o factorial.o libmath.a
+	g++ -L./ -o Practica7 main2.o hello.o factorial.o -lmath
+
+main2.o: main2.cpp $(INCLUDE_DIR)functions.h $(INCLUDE_DIR)mates.h
+	g++ -c main2.cpp
+
+hello.o: hello.cpp $(INCLUDE_DIR)functions.h
+	g++ -c hello.cpp
+
+factorial.o: factorial.cpp $(INCLUDE_DIR)functions.h
+	g++ -c factorial.cpp
+
+tan.o: tan.cpp $(INCLUDE_DIR)mates.h
+	g++ -c tan.cpp
+
+cos.o: cos.cpp $(INCLUDE_DIR)mates.h
+	g++ -c cos.cpp
+
+sin.o: sin.cpp $(INCLUDE_DIR)mates.h
+	g++ -c sin.cpp
+
+libmath.a: tan.o cos.o sin.o
+	ar -rvs libmath.a sin.o cos.o tan.o

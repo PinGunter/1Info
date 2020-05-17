@@ -1,0 +1,17 @@
+# Archivo makefile Ejercicio1.2
+# Uso: make -f makefile1.2 hello.o | factorial.o | tan.o | cos.o | sin.o
+
+hello.o: hello.cpp functions.h
+	g++ -c hello.cpp
+
+factorial.o: factorial.cpp functions.h
+	g++ -c factorial.cpp
+
+tan.o: tan.cpp mates.h
+	g++ -c tan.cpp
+
+cos.o: cos.cpp mates.h
+	g++ -c cos.cpp
+
+sin.o: sin.cpp mates.h
+	g++ -c sin.cpp

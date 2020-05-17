@@ -1,0 +1,40 @@
+digraph "main"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Rectangle::setGeometry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#a31c4b9fc0d1ddf912f114da494e50205",tooltip="Initializes the data of the rectangle. "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Rectangle::print",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#a035d467554bf71dc8e47ad601bbb1294",tooltip="Prints the rectangle in the form [Point2D - Point2D]. "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Rectangle::read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#af6973ed3094f9dbabeadb071772fa76d",tooltip="Reads the two points of the rectangle. "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="doOverlap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a888d2b0113947b4461107bb02b28799d"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Point2D::setX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#af268842e8f2e6072ffe345dc2f322046",tooltip="Initializes the X coordinate. "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Point2D::getX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#a6cff00d11a53dc1af436225f02bc324b",tooltip="Queries the X coordinate. "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Point2D::setY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#a0e08240b54e6eaae92c979082da1c91c",tooltip="Initializes the Y coordinate. "];
+  Node5 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Point2D::getY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#a1b9e163b3642485c46a1f68c54d735fc",tooltip="Queries the Y coordinate. "];
+  Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Rectangle::isEmpty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#a85caa6e3772b83a302ff9f47d587dd83",tooltip="For a rectangle to be valid this condition must hold topleft.getX() < = bottomright.getX() && topleft.getY() > = bottomright.getY() otherwise it is an empty (incorrect) rectangle. "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Point2D::read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#ac13d12003e2da9afee19a6a3f526c660",tooltip="Reads the XY value from keyboard. "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="isInside",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a5fe7cf71c1f13eed4b8144d0e00dc58d",tooltip="Calculates whether a point is internal to a rectangle. "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Rectangle::getTopLeft",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#a6aeadc63b82f3c2efbbbd57041fb32e3",tooltip="Queries the top-left corner. "];
+  Node12 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Rectangle::getBottomRight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classRectangle.html#aa08d26c1548936bf1e6365f08f35cb27",tooltip="Queries the bottom-right corner. "];
+  Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Point2D::print",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPoint2D.html#ac47e5e48cf495ecd767995f6142ef3e3",tooltip="Prints the XY values in the screen in the form (X,Y) "];
+}

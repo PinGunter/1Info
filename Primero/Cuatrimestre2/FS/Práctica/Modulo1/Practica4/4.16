@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $1 | egrep -q "\<[a-Z]{1}\>" && printf "Es una única letra en mayúsculas o minúsculas\n" || printf "Es algo distinto de una única letra\n"

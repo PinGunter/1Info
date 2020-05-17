@@ -1,0 +1,49 @@
+#!/bin/bash
+# Titulo: 	guionRepasoMod1
+# Fecha:	22/03/2020 	
+# Autor: 	Salvador Romero Cortés
+# Versión: 	1.0
+# Descripción: 	
+	# Comprobar que el número de argumentos es correcto, y si no fuera así, indicar cómo se debe ejecutar para que funcione correctamente. Esto es, una pequeña ayuda y terminar.
+	
+	# Si el segundo argumento es un archivo, escribir las tres primeras líneas en otro archivo llamado salida y mostrar un mensaje informando de dicha acción. En caso contrario 		informar del error y salir.
+
+	# Si el primer argumento es un directorio, mostrar un mensaje con el número de archivos que contiene. En caso contrario crear un directorio con el nombre del primer argumento
+	
+	# Buscar en el directorio pasado como primer argumento los archivos que tienen permiso de lectura y añadir el resultado de la búsqueda al final del archivo salida. Además, 		mostrar por pantalla el siguiente mensaje: "De un total de N archivos, hay X archivos con permiso de lectura" (siendo N el número total de archivos del directorio  X los que 		tienen permiso de lectura)
+# Opciones: 	Ninguna
+# Uso: 		guionRepasoMod1 <directorio> <archivo>
+
+
+
+
+if [[ $# -eq 2 ]]; 
+then
+	if [[ -f $2 ]];
+	then
+		#como el enunciado no dice nada, asumo que el archivo salida se escribe en el directorio introducido como parametro
+		head -n 3 $2 > $1/salida
+		printf "Se han escrito las 3 primeras lineas de %s en un archivo llamado \"salida\"\n" $2
+
+		if [ -d $1 ];
+		then
+			numero_archivos=`find $1 -maxdepth 1 -type f | wc -l`
+			printf "En el directorio %s hay %i archivos\n" $1 $numero_archivos
+			 
+		else
+			mkdir $1
+			printf "Como no existia el directorio %s se ha creado en su lugar\n" $1
+		fi
+		
+		find $1 -perm -a=r >> $1/salida
+		n_con_permiso_l=`find $1 -maxdepth 1 -perm -a=r -type f | wc -l`
+		printf "De un total de %i de archivos, hay %i archivos con permiso de lectura\n" $numero_archivos $n_con_permiso_l
+
+	else
+		printf "El segundo argumento no es un archivo valido\n"
+	fi	
+		
+else
+	printf "El numero introducido de argumentos no es válido\nEl uso de este guión es guionRepasoMod1 <directorio> <archivo>\n"
+fi
+

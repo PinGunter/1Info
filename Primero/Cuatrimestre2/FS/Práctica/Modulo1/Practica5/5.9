@@ -1,0 +1,13 @@
+#!/bin/bash
+if [ $# == 3 ] && [ $2 -le 99 -a $2 -ge 1 ]; then 
+	#comprobacion/creacion de directorio
+	[ -d $1 ] || mkdir $1; echo "Directorio $1 creado";
+	for i in `seq 1 1 $2`;
+	do
+		echo Archivo $1/$3$i creado
+		touch $1/$3$i
+	done
+else
+	echo "Uso incorrecto. Uso: 5.9 <directorio> <numero_archivos> <nombre_base>"
+	echo "<numero_archivos> debe ser un numero entre 1 y 99"
+fi

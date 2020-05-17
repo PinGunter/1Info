@@ -1,0 +1,16 @@
+#!/bin/bash
+dia=`date +%j`
+anio=366 #estamos en año bisiesto
+restante=`expr $anio - $dia`
+
+if [[ -z $1 ]]; then
+	if (( $restante % 5 == 0));then
+		printf "El numero de dias que faltan hasta año nuevo es múltiplo de 5\n"
+	else
+		printf "El numero de dias que faltan hasta año nuevo no es múltiplo de 5\n"
+	fi
+elif [[ $1 = "-h" ]]; then
+	printf "Este guión indica si el número de días que quedan para que acabe el año es múltiplo de 5\nNo admite argumentos, excepto \"-h\" para mostrar este mensaje\n"
+else
+	printf "Uso inválido, consulte -h para ayuda\n"
+fi

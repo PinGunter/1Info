@@ -1,0 +1,8 @@
+trap 'echo fin' EXIT
+contador=1
+while read lineaLectura ;
+do
+	echo "Línea $contador: $lineaLectura"
+	contador=$[ $contador + 1]
+done < archivotest
+echo "Finalizado el procesamiento del archivo"

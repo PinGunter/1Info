@@ -1,0 +1,17 @@
+#!/bin/bash
+# $1 mes
+case $1 in
+	ene | ENE | 1 ) echo Enero;;
+	feb | FEB | 2 ) echo Febrero;;
+	mar | MAR | 3 ) echo Marzo;;
+	abr | ABR | 4 ) echo Abril;;
+	may | MAY | 5 ) echo Mayo;;
+	jun | JUN | 6 ) echo Junio;;
+	jul | JUL | 7 ) echo Julio;;
+	ago | AGO | 8 ) echo Agosto;;
+	sep | SEP | 9 ) echo Septiembre;;
+	oct | OCT | 10 ) echo Octubre;;
+	nov | NOV | 11 ) echo Noviembre;;
+	dic | DIC | 12 ) echo Diciembre;;
+	* ) echo Parámetro no válido
+esac

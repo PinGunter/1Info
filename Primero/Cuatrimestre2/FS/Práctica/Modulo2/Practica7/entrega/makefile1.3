@@ -1,0 +1,23 @@
+# Archivo makefile Ejercicio1.3
+# Uso: make -f makefile1.3
+
+
+todos: hello.o factorial.o tan.o cos.o sin.o libmath.a
+
+hello.o: hello.cpp functions.h
+	g++ -c hello.cpp
+
+factorial.o: factorial.cpp functions.h
+	g++ -c factorial.cpp
+
+tan.o: tan.cpp mates.h
+	g++ -c tan.cpp 
+
+cos.o: cos.cpp mates.h
+	g++ -c cos.cpp
+
+sin.o: sin.cpp mates.h
+	g++ -c sin.cpp
+
+libmath.a: tan.o cos.o sin.o
+	ar -rvs libmath.a sin.o cos.o tan.o

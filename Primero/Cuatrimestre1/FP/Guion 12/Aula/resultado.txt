@@ -1,0 +1,6 @@
+Introduce la frase:
+
+Introduce el tamanio del vector de parajas: 
+Introduce los elementos del vector de parejas: 
+Caracter: Entero: 
+Caracter: Entero: La frase con las parejas eliminadas queda como: a b a b c a b d 

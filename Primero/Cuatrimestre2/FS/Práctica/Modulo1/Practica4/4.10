@@ -1,0 +1,7 @@
+#!/bin/bash
+esplanoyejecutable=`test -f $1 -a -x $1 && echo true || echo false`
+esenlacesimbolico=`test -h $1 && echo true || echo false`
+
+if [[ $esplanoyejecutable == true ]]; then echo "El archivo $1 es plano y ejecutable"; else echo "El archivo $1 no es plano y ejecutable"; fi
+
+if [[ $esenlacesimbolico == true ]]; then echo "El archivo $1 es un enlace simbolico"; else echo "El archivo $1 no es un enlace simbolico"; fi

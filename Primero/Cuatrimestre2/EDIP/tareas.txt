@@ -1,0 +1,2 @@
+Cuantas diagonales se cortan en el interior
+

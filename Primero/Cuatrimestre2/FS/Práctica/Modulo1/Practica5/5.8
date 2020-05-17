@@ -1,0 +1,52 @@
+#!/bin/bash
+#primero comprobamos el numero de argumentos
+#luego comprobamos, si $# == 1 entonces se hace con directorios, en caso contrario una lista de archivos
+#comprobamos/creamos el directorio de las copias de seguridad
+#si es un directorio le hacemos tar
+#si es una lista de archivos, los comprobamos, los copiamos a un archivo, le hacemos tar, borramos archivo de lista
+dia=`date +%d`
+mes=`date +%m`
+anio=`date +%Y`
+salida=copia$anio$mes$dia
+dirsalida=CopiasSeguridad
+archivos=true
+
+_uso()
+{
+	echo "Uso: 5.8 <directorio> o bien 5.8 <archivo1 archivo2 ...>"
+	exit 1
+}
+_fin()
+{
+	echo "Copia finalizada"
+}
+
+
+if [ $# -lt 1 ]; then echo "Se necesitan argumentos para este guion"; _uso;fi
+
+test -d $1 && directorio=true || directorio=false
+
+if [ $directorio == false -a $# -eq 1 ]; then echo "El argumento introducido no es un directorio válido"; _uso; fi
+
+if [ ! -d $dirsalida ]; then echo "No existe el directorio de copias de seguridad, se crea."; mkdir $dirsalida; fi
+
+if [[ $directorio == true ]];
+then
+	tar -cf $dirsalida/$salida $1
+	_fin
+else
+	for archivo in $@;
+	do
+		echo $archivo
+		test -f $archivo || archivos=false
+		echo $archivo >> $dirsalida/temp.txt
+	done
+
+	if [[ $archivos = true ]]; 
+	then 
+	       	tar -cf $dirsalida/$salida -T $dirsalida/temp.txt
+	else
+		echo "Los parámetros introducidos no son correctos"; _uso;
+     	fi
+	rm $dirsalida/temp.txt
+fi
