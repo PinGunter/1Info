@@ -203,5 +203,32 @@ Move Tiles::findMaxWord(int r, int c, bool hrz) const{
 }
 
 Movelist Tiles::findCrosswords(const Move &m, const Language &l) const{
-    
+    // Primero metemos el move en el tablero en los huecos disponibles
+    // Creamos un tablero auxiliar
+    Tiles otro(*this);
+    bool continuar = true;
+    int k=0;
+    Movelist lista;
+    //horizontal
+    if (m.isHorizontal()){
+        int fila = m.getRow()-1, columna = m.getCol()-1;
+        for (int i=columna; i < getWidth() && continuar; i++){
+            if (i == columna && get(fila,columna) != EMPTY){
+                m.setScore(NOT_FREE);
+                continuar = false;
+            }
+            else{
+                if (get(fila,i) == EMPTY)
+                    otro.set(fila,i,m.getLetters().at(k++));
+            }
+                
+        }
+        //una vex que acabe comprobamos si ha cabido la palabra
+        if (k < m.getLetters().length())
+            m.setScore(BOARD_OVERFLOW);
+    } 
+    //vertical
+    else{
+        
+    }
 }
