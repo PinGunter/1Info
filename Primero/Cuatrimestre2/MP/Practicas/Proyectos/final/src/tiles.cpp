@@ -54,11 +54,13 @@ void Tiles::add(const Move& m) {
     int m_col = m.getCol() - 1;
     for (int i = m_row; i < (m_row + m.getLetters().length()) && !m.isHorizontal(); i++)
         if (i >= 0 && i < rows && m_col >= 0 && m_col < columns)
-            set(i, m_col, m.getLetters().at(++k));
+            if (get(i,m_col) == EMPTY)
+                set(i, m_col, m.getLetters().at(++k));
 
     for (int i = m_col; i < (m_col + m.getLetters().length()) && m.isHorizontal(); i++)
         if (m_row >= 0 && m_row < rows && i >= 0 && i < columns)
-            set(m_row, i, m.getLetters().at(++k));
+            if (get(m_row,i) == EMPTY)
+                set(m_row, i, m.getLetters().at(++k));
 }
 
 void Tiles::print(std::ostream& os) const {
@@ -206,19 +208,19 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     // Primero metemos el move en el tablero en los huecos disponibles
     // Creamos un tablero auxiliar
     Tiles otro(*this);
-    bool continuar = true;
+    bool continuar = true, copiar = true;
     int k = 0;
     Movelist lista;
     Move move;
     int fila = m.getRow(), columna = m.getCol();
-    
-    if (get(fila-1,columna-1) != EMPTY){            //En caso de que el main no compruebe bien el NOT FREE
+
+    if (get(fila - 1, columna - 1) != EMPTY) { //En caso de que el main no compruebe bien el NOT FREE
         move.setScore(NOT_FREE);
         lista.add(move);
         return lista;
     }
-        
-    
+
+
     //horizontal
     if (m.isHorizontal()) {
         //intentamos poner el movimiento
@@ -228,27 +230,16 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
                 return lista;
             } else if (otro.get(fila - 1, columna + k - 1) == EMPTY) {
                 otro.set(fila - 1, columna + k - 2, m.getLetters().at(k++));
-                otro.print(std::cout);
                 move = otro.findMaxWord(fila, columna + k - 1, !m.isHorizontal());
                 if (l.query(move.getLetters()))
                     move.setScore(move.findScore(l));
                 else
                     move.setScore(NONEXISTENT_WORD);
-                
+
                 if (move.getLetters().length() != 1)
                     lista.add(move);
             }
         }
-
-        //añadimos la palabra mas larga en la posicion del move original
-        move = otro.findMaxWord(m.getRow(), m.getCol(), m.isHorizontal());
-        if (l.query(move.getLetters()))
-            move.setScore(move.findScore(l));
-        else
-            move.setScore(NONEXISTENT_WORD);
-        
-        if (move.getLetters().length() != 1)
-            lista.add(move);
 
     }//vertical
     else {
@@ -269,15 +260,16 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
             }
         }
 
-        //añadimos la palabra mas larga en la posicion del move original
-        move = otro.findMaxWord(m.getRow(), m.getCol(), m.isHorizontal());
-        if (l.query(move.getLetters()))
-            move.setScore(move.findScore(l));
-        else
-            move.setScore(NONEXISTENT_WORD);
-        if (move.getLetters().length() != 1)
-            lista.add(move);
-    }
 
+    }
+    //añadimos la palabra mas larga en la posicion del move original
+    move = otro.findMaxWord(m.getRow(), m.getCol(), m.isHorizontal());
+    if (l.query(move.getLetters()))
+        move.setScore(move.findScore(l));
+    else
+        move.setScore(NONEXISTENT_WORD);
+    if (move.getLetters().length() != 1)
+        lista.add(move);
+    
     return lista;
 }
