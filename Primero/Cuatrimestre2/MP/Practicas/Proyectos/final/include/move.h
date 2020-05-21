@@ -8,11 +8,11 @@
 #define MOVE_H
 
 #define UNKNOWN -1
-#define BOARD_OVERFLOW -2
-#define NONEXISTENT_WORD -3
-#define INFEASIBLE_WORD -4 
-#define NOT_FREE -5
-#define MISSING_CROSSWORDS -6 
+#define BOARD_OVERFLOW -2           //findcrossword -- devuelve lista vacia
+#define NONEXISTENT_WORD -3         //findcrossword -- puntuacion negativa
+#define INFEASIBLE_WORD -4          //main con el player 
+#define NOT_FREE -5                 //main antes del findcrossword
+#define MISSING_CROSSWORDS -6       //findcrossword -- puntuacion negativa
 
 #include <iostream>
 #include "language.h"
