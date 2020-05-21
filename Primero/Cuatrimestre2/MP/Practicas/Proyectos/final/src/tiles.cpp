@@ -210,65 +210,63 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     int k = 0;
     Movelist lista;
     Move move;
+    int fila = m.getRow(), columna = m.getCol();
+
     //horizontal
     if (m.isHorizontal()) {
-        int fila = m.getRow() - 1, columna = m.getCol() - 1;
-
         //intentamos poner el movimiento
         while (k < m.getLetters().length()) {
-            if (fila >= getHeight() || k >= getWidth()) {       //ERROR: BOARD_OVERFLOW
+            if (fila >= getHeight() || columna + k >= getWidth()) { //ERROR: BOARD_OVERFLOW
                 lista.clear();
                 return lista;
-            } 
-            else if (otro.get(fila, k) == EMPTY){
-                otro.set(fila, k++);
-                move = otro.findMaxWord(fila+1,k-1,!m.isHorizontal());
+            }
+            else if (otro.get(fila - 1, columna + k - 1) == EMPTY) {
+                otro.set(fila - 1, columna + k - 2, m.getLetters().at(k++));
+                otro.print(std::cout);
+                move = otro.findMaxWord(fila, columna + k - 1, !m.isHorizontal());
                 if (l.query(move.getLetters()))
-                    move.setScore(move.findScore());
+                    move.setScore(move.findScore(l));
                 else
                     move.setScore(NONEXISTENT_WORD);
                 lista.add(move);
             }
         }
-        
+
         //añadimos la palabra mas larga en la posicion del move original
-        move = otro.findMaxWord(m.getRow(),m.getCol(),m.isHorizontal());
+        move = otro.findMaxWord(m.getRow(), m.getCol(), m.isHorizontal());
         if (l.query(move.getLetters()))
-                    move.setScore(move.findScore());
-                else
-                    move.setScore(NONEXISTENT_WORD);
-                lista.add(move);
-        
-    }
-        //vertical
+            move.setScore(move.findScore(l));
+        else
+            move.setScore(NONEXISTENT_WORD);
+        lista.add(move);
+
+    }        //vertical
     else {
-        int fila = m.getRow() - 1, columna = m.getCol() - 1;
-
         //intentamos poner el movimiento
         while (k < m.getLetters().length()) {
-            if (fila >= getHeight() || k >= getWidth()) {       //ERROR: BOARD_OVERFLOW
+            if (fila + k >= getHeight() || columna >= getWidth()) { //ERROR: BOARD_OVERFLOW
                 lista.clear();
                 return lista;
-            } 
-            else if (otro.get(k, columna) == EMPTY){
-                otro.set(k++, columna);
-                move = otro.findMaxWord(k-1,columna+1,!m.isHorizontal());
+            }
+            else if (otro.get(fila + k - 1, columna - 1) == EMPTY) {
+                otro.set(fila + k - 2, columna - 1, m.getLetters().at(k++));
+                move = otro.findMaxWord(fila + k - 1, columna, !m.isHorizontal());
                 if (l.query(move.getLetters()))
-                    move.setScore(move.findScore());
+                    move.setScore(move.findScore(l));
                 else
                     move.setScore(NONEXISTENT_WORD);
                 lista.add(move);
             }
         }
-        
+
         //añadimos la palabra mas larga en la posicion del move original
-        move = otro.findMaxWord(m.getRow(),m.getCol(),m.isHorizontal());
+        move = otro.findMaxWord(m.getRow(), m.getCol(), m.isHorizontal());
         if (l.query(move.getLetters()))
-                    move.setScore(move.findScore());
-                else
-                    move.setScore(NONEXISTENT_WORD);
-                lista.add(move);
+            move.setScore(move.findScore(l));
+        else
+            move.setScore(NONEXISTENT_WORD);
+        lista.add(move);
     }
-    
+
     return lista;
 }
