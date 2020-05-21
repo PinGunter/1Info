@@ -211,7 +211,14 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     Movelist lista;
     Move move;
     int fila = m.getRow(), columna = m.getCol();
-
+    
+    if (get(fila-1,columna-1) != EMPTY){            //En caso de que el main no compruebe bien el NOT FREE
+        move.setScore(NOT_FREE);
+        lista.add(move);
+        return lista;
+    }
+        
+    
     //horizontal
     if (m.isHorizontal()) {
         //intentamos poner el movimiento
@@ -219,8 +226,7 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
             if (fila >= getHeight() || columna + k >= getWidth()) { //ERROR: BOARD_OVERFLOW
                 lista.clear();
                 return lista;
-            }
-            else if (otro.get(fila - 1, columna + k - 1) == EMPTY) {
+            } else if (otro.get(fila - 1, columna + k - 1) == EMPTY) {
                 otro.set(fila - 1, columna + k - 2, m.getLetters().at(k++));
                 otro.print(std::cout);
                 move = otro.findMaxWord(fila, columna + k - 1, !m.isHorizontal());
@@ -228,7 +234,9 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
                     move.setScore(move.findScore(l));
                 else
                     move.setScore(NONEXISTENT_WORD);
-                lista.add(move);
+                
+                if (move.getLetters().length() != 1)
+                    lista.add(move);
             }
         }
 
@@ -238,24 +246,26 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
             move.setScore(move.findScore(l));
         else
             move.setScore(NONEXISTENT_WORD);
-        lista.add(move);
+        
+        if (move.getLetters().length() != 1)
+            lista.add(move);
 
-    }        //vertical
+    }//vertical
     else {
         //intentamos poner el movimiento
         while (k < m.getLetters().length()) {
             if (fila + k >= getHeight() || columna >= getWidth()) { //ERROR: BOARD_OVERFLOW
                 lista.clear();
                 return lista;
-            }
-            else if (otro.get(fila + k - 1, columna - 1) == EMPTY) {
+            } else if (otro.get(fila + k - 1, columna - 1) == EMPTY) {
                 otro.set(fila + k - 2, columna - 1, m.getLetters().at(k++));
                 move = otro.findMaxWord(fila + k - 1, columna, !m.isHorizontal());
                 if (l.query(move.getLetters()))
                     move.setScore(move.findScore(l));
                 else
                     move.setScore(NONEXISTENT_WORD);
-                lista.add(move);
+                if (move.getLetters().length() != 1)
+                    lista.add(move);
             }
         }
 
@@ -265,7 +275,8 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
             move.setScore(move.findScore(l));
         else
             move.setScore(NONEXISTENT_WORD);
-        lista.add(move);
+        if (move.getLetters().length() != 1)
+            lista.add(move);
     }
 
     return lista;
