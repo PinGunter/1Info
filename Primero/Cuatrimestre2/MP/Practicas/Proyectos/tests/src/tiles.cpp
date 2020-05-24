@@ -147,11 +147,9 @@ Move Tiles::findMaxWord(int r, int c, bool hrz) const {
                 columna_word = j + 1;
             }
         }
-        if (columna_word == -1)
-            columna_word = columna;
 
-        if (j == 0)
-            columna_word = j;
+        if (continuar)
+            columna_word = 0;
 
         //invertimos la palabra
         for (int i = 0; i < word.length() / 2; i++) {
@@ -183,11 +181,8 @@ Move Tiles::findMaxWord(int r, int c, bool hrz) const {
                 fila_word = j + 1;
             }
         }
-        if (fila_word == -1)
-            fila_word = fila;
-
-        if (j == 0)
-            fila_word = j;
+        if (continuar)
+            fila_word = 0;
 
         //invertimos la palabra
         for (int i = 0; i < word.length() / 2; i++) {
