@@ -228,7 +228,7 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     if (m.isHorizontal()) {
         //intentamos poner el movimiento
         for (int i=columna-1; i < getWidth() && k < m.getLetters().length(); i++){
-            if (fila >= getHeight() || i >= getWidth()) { //ERROR: BOARD_OVERFLOW
+            if (fila > getHeight() || i > getWidth()) { //ERROR: BOARD_OVERFLOW
                 lista.clear();
                 return lista;
             } else if (otro.get(fila - 1, i) == EMPTY) {
@@ -248,7 +248,7 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     else {
         //intentamos poner el movimiento
         for (int i=fila-1; i < getHeight()&& k < m.getLetters().length(); i++) {
-            if (i >= getHeight() || columna >= getWidth()) { //ERROR: BOARD_OVERFLOW
+            if (i > getHeight() || columna > getWidth()) { //ERROR: BOARD_OVERFLOW
                 lista.clear();
                 return lista;
             } else if (otro.get(i, columna - 1) == EMPTY) {

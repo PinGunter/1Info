@@ -1,11 +1,29 @@
 "make" -f nbproject/Makefile-Debug.mk QMAKE= SUBPROJECTS= .build-conf
-make[1]: se entra en el directorio '/home/salvaromero/infouni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/tiles'
-"make"  -f nbproject/Makefile-Debug.mk dist/Debug/GNU-Linux/tiles
-make[2]: se entra en el directorio '/home/salvaromero/infouni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/tiles'
+make[1]: se entra en el directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
+"make"  -f nbproject/Makefile-Debug.mk dist/Debug/GNU-Linux/final
+make[2]: se entra en el directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
+mkdir -p build/Debug/GNU-Linux/src
+rm -f "build/Debug/GNU-Linux/src/bag.o.d"
+g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/bag.o.d" -o build/Debug/GNU-Linux/src/bag.o src/bag.cpp
 mkdir -p build/Debug/GNU-Linux/src
 rm -f "build/Debug/GNU-Linux/src/main.o.d"
 g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/main.o.d" -o build/Debug/GNU-Linux/src/main.o src/main.cpp
+mkdir -p build/Debug/GNU-Linux/src
+rm -f "build/Debug/GNU-Linux/src/move.o.d"
+g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/move.o.d" -o build/Debug/GNU-Linux/src/move.o src/move.cpp
+mkdir -p build/Debug/GNU-Linux/src
+rm -f "build/Debug/GNU-Linux/src/movelist.o.d"
+g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/movelist.o.d" -o build/Debug/GNU-Linux/src/movelist.o src/movelist.cpp
+mkdir -p build/Debug/GNU-Linux/src
+rm -f "build/Debug/GNU-Linux/src/player.o.d"
+g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/player.o.d" -o build/Debug/GNU-Linux/src/player.o src/player.cpp
+mkdir -p build/Debug/GNU-Linux/src
+rm -f "build/Debug/GNU-Linux/src/tiles.o.d"
+g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/tiles.o.d" -o build/Debug/GNU-Linux/src/tiles.o src/tiles.cpp
+mkdir -p build/Debug/GNU-Linux/src
+rm -f "build/Debug/GNU-Linux/src/window.o.d"
+g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/window.o.d" -o build/Debug/GNU-Linux/src/window.o src/window.cpp
 mkdir -p dist/Debug/GNU-Linux
-g++     -o dist/Debug/GNU-Linux/tiles build/Debug/GNU-Linux/src/bag.o build/Debug/GNU-Linux/src/main.o build/Debug/GNU-Linux/src/move.o build/Debug/GNU-Linux/src/movelist.o build/Debug/GNU-Linux/src/player.o build/Debug/GNU-Linux/src/tiles.o ../local/lib/liblanguage.a ../local/lib/libwordlist.a
-make[2]: se sale del directorio '/home/salvaromero/infouni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/tiles'
-make[1]: se sale del directorio '/home/salvaromero/infouni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/tiles'
+g++     -o dist/Debug/GNU-Linux/final build/Debug/GNU-Linux/src/bag.o build/Debug/GNU-Linux/src/main.o build/Debug/GNU-Linux/src/move.o build/Debug/GNU-Linux/src/movelist.o build/Debug/GNU-Linux/src/player.o build/Debug/GNU-Linux/src/tiles.o build/Debug/GNU-Linux/src/window.o ../local/lib/liblanguage.a ../local/lib/libwordlist.a ../local/lib/libansiterminal.a
+make[2]: se sale del directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
+make[1]: se sale del directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
