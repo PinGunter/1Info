@@ -39,7 +39,6 @@ using namespace std;
  */
 void errorBreak(int errorcode, const string & errorinfo);
 
-
 /**
  * @brief Main function. 
  * @return 
@@ -47,86 +46,236 @@ void errorBreak(int errorcode, const string & errorinfo);
 int main(int nargs, char * args[]) {
     Move move;
     Game game;
-    int w=-1, h=-1, wait=0;
-    string lang="",ifilematch="", ofilematch="", word;
-    ifstream ifile; ofstream ofile;
-    bool end=false;
-	 char c;
-    
+    int w = -1, h = -1, wait = 0;
+    string lang = "", ifilematch = "", ofilematch = "", word;
+    ifstream ifile;
+    ofstream ofile;
+    bool end = false;
+    char c;
+    bool nueva_partida, continuar_partida;
+
     /// Check arguments
 
-    // Process arguments
+    nueva_partida = nargs == 7 || nargs == 9 || nargs == 11;
+    continuar_partida = nargs == 3 || nargs == 5;
+    if (!nueva_partida && !continuar_partida)
+        errorBreak(ERROR_ARGUMENTS, "");
 
+    //empezar partida nueva
+    for (int i = 1; i < nargs && nueva_partida;) {
+        string aux = args[i++];
+        if (aux == "-l")
+            lang = args[i++];
+        else if (aux == "-w")
+            w = atoi(args[i++]);
+        else if (aux == "-h")
+            h = atoi(args[i++]);
+        else if (aux == "-r")
+            game.random = atoi(args[i++]);
+        else if (aux == "-save")
+            ofilematch = args[i++];
+        else
+            errorBreak(ERROR_ARGUMENTS, "");
+
+    }
+
+    //continuar partida
+    for (int i = 1; i < nargs && continuar_partida;) {
+        string aux = args[i++];
+        if (aux == "-open")
+            ifilematch = args[i++];
+        else if (aux == "-save")
+            ofilematch = args[i++];
+        else
+            errorBreak(ERROR_ARGUMENTS, "");
+
+    }
+
+    // Process arguments
+    if (ifilematch != "") {
+        ifile.open(ifilematch);
+        if (!ifile)
+            errorBreak(ERROR_OPEN,ifilematch);
+        ifile >> game;
+        if (!ifile)
+            errorBreak(ERROR_DATA, ifilematch);
+        
+        ifile.close();
+    }
+
+    if (ofilematch != "") {
+        ofile.open(ofilematch);
+        if (!ofile)
+            errorBreak(ERROR_OPEN,ofilematch);
+    }
     /// load data from file, if asked to in arguments
 
     // Game's main loop 
     // 1) First set the size of the window according to the size (rows & columns) of
     // the new Tiles
+    if (nueva_partida){
+        game.language.setLanguage(lang);
+        if (game.random != -1)
+            game.bag.setRandom(game.random);
+        game.bag.define(game.language);
+        game.player.add(game.bag.extract(MAXPLAYER));
+        game.tiles.setSize(h, w);
+    }
 
-    while (!end)  {
+    while (!end) {
+        game.setWindowSize();
         // 2) Given the inner data members, it pretty-prints the screen
-
+        game.doPaint();
+        setCursorOn();
         // 3) Reads the movement from cin
         cin >> move;
+        setCursorOff();
         word = move.getLetters();
-        if (word=="_") {
-            end=true;
-        // Checks whether the movement is valid accoring to the letters in player    
-            // Finds all the crosswords produced by move and inform about the reasons of rejection
-            game.crosswords = game.tiles.findCrosswords(move,game.language);
-            //Checks that the crosswords are valid, that is either has a positive score
-            //      or produces at least a cross with other existin letters
-                // Once a valid move is detected, the user is asked to confirm
-            
-                // call doConfirmCrosswords()
-            
-                //     the movement. If he/she does (by pressing Y o y) then the movement
-                //     is inserted in tiles and its score is calculated,
-                //     otherwise, the move is just ignored
-            // If valid and accepted, computes the score and adds it
-                score +=move.getScore();
-                // Show crosswords found
-            // If it is a bad crosswords
- 
-                // call doBadCrosswords()
+        if (word == "_") {
+            end = true;
+        } else{
+         
+            // Checks whether the movement is valid accoring to the letters in player    
+            if (game.player.isValid(move.getLetters())){
+                // Finds all the crosswords produced by move and inform about the reasons of rejection
+                if (game.tiles.get(move.getRow()-1,move.getCol()-1) != EMPTY){
+                    move.setScore(NOT_FREE);
+                    game.doBadCrosswords("Not free");
+                    game.rejectedmovements.add(move);
+                }
                 
+                game.crosswords = game.tiles.findCrosswords(move, game.language);
+                        //Checks that the crosswords are valid, that is either has a positive score
+                if (game.crosswords.getScore() > 0){
+                    if (game.doConfirmCrosswords("Accept movement?")){
+                        for (int i=0; i < game.crosswords.size(); i++){
+                            game.tiles.add(game.crosswords.get(i));
+                        }
+                        game.score += game.crosswords.getScore();
+                        game.acceptedmovements.add(move);
+                        game.player.extract(word);
+                        game.player.add(game.bag.extract(MAXPLAYER-game.player.to_string().length()));
+                    }
+                        
+                }
+            //      or produces at least a cross with other existin letters
+            // Once a valid move is detected, the user is asked to confirm
+
+            // call doConfirmCrosswords()
+
+            //     the movement. If he/she does (by pressing Y o y) then the movement
+            //     is inserted in tiles and its score is calculated,
+            //     otherwise, the move is just ignored
+            // If valid and accepted, computes the score and adds it
+            // Show crosswords found
+            // If it is a bad crosswords
+                else{
+                    if (game.crosswords.size() == 0){
+                        game.doBadCrosswords("Board Overflow");
+                        move.setScore(BOARD_OVERFLOW);
+                        game.rejectedmovements.add(move);
+                    }
+                    else if (game.crosswords.size() == 1 && game.acceptedmovements.size() > 0){
+                        game.doBadCrosswords("No crosswords found");
+                        move.setScore(MISSING_CROSSWORDS);
+                        game.rejectedmovements.add(move);
+                    }
+                    else if (game.crosswords.size() >= 1){
+                        game.doBadCrosswords("Non-existent word");
+                        move.setScore(NONEXISTENT_WORD);
+                        game.rejectedmovements.add(move);
+                    } else{
+                        game.doBadCrosswords("Unknown error");
+                        move.setScore(UNKNOWN);
+                        game.rejectedmovements.add(move);
+                    }
+                   
+                }
+            // call doBadCrosswords()
+
             // If not valid w.r.t. player
 
-                // call doBadCrosswords()
+            // call doBadCrosswords()
+            } else{
+                game.doBadCrosswords("Infeasible word");
+                move.setScore(INFEASIBLE_WORD);
+                game.rejectedmovements.add(move);
+            }
+        }
     }
-    // End of game
-    // Save file or print screen
- 
+        // End of game
+        // Save file or print screen
+    if (ofilematch != ""){
+        ofile << toUTF(PASSWORD) << endl;
+        ofile << game;
+        ofile.close();
+    } else
+        cout << "\n%%%OUTPUT" << endl << game;
+    
+    
     return 0;
-    }
+
 }
 
-ostream & operator<<(ostream & os, const Game & game)  {
-    // To implement
+ostream & operator<<(ostream & os, const Game & game) {
+    os << game.score << endl;
+    os << toUTF(game.language.getLanguage()) << endl;
+    game.tiles.print(os);
+    os << game.player.size() << " " << toUTF(game.player.to_string()) << endl;
+    os << game.bag.size() << " " << toUTF(game.bag.to_string()) << endl;
+
     return os;
 }
 
 istream & operator>>(istream & is, Game &game) {
-    // To implement
+    int useless;
+    string play, bolsa, verifypsswd, lang;
+    is >> verifypsswd;
+
+    if (!is)
+        return is;
+    
+    if (verifypsswd != PASSWORD)
+        errorBreak(ERROR_DATA,"");
+    is >> game.score;
+    is >> lang;
+    if (!is)
+        return is;
+    game.language.setLanguage(lang);
+
+    if (!game.tiles.read(is))
+        return is;
+
+    is >> useless >> play;
+    if (!is)
+        return is;
+
+    is >> useless >> bolsa;
+    if (!is)
+        return is;
+    game.bag.define(game.language);
+    game.bag.set(toISO(bolsa));
+    game.player.add(toISO(play));
+
     return is;
 }
 
 void errorBreak(int errorcode, const string &errordata) {
     cerr << endl << "%%%OUTPUT" << endl;
-    switch(errorcode) {
+    switch (errorcode) {
         case ERROR_ARGUMENTS:
-            cerr<<"Error in call. Please use either:"<<endl;
-            cerr<< "-l <language> -w <width> -h <height> [-r <randomnumber> -save <matchfile>]"<<endl;
-            cerr<< "-open <matchfile> [-save <matchfile>]"<<endl;            
+            cerr << "Error in call. Please use either:" << endl;
+            cerr << "-l <language> -w <width> -h <height> [-r <randomnumber> -save <matchfile>]" << endl;
+            cerr << "-open <matchfile> [-save <matchfile>]" << endl;
             break;
         case ERROR_OPEN:
-            cerr<<"Error opening file "<<errordata << endl;
+            cerr << "Error opening file " << errordata << endl;
             break;
         case ERROR_DATA:
-            cerr<<"Data error in file "<<errordata << endl;
+            cerr << "Data error in file " << errordata << endl;
             break;
         case GENERAL_ERROR:
-            cerr<<"Error: "<<errordata << endl;
+            cerr << "Error: " << errordata << endl;
             break;
     }
     std::exit(1);

@@ -13,6 +13,8 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>
@@ -24,17 +26,18 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN -r 2020 -w 10 -h 5 -p data/EU_2020_UNSORTED.data                                                                </runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN -r 2020 -w 10 -h 5 -p data/EU_2020_UNSORTED.data</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"   -open data/ES_2020_155_A.match -p data/ES_2020_155_B.data</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"    -open data/ES_2020_155_A.match -p data/ES_2020_155_B.data </runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"    -open data/ES_2020_155_A.match -p data/ES_2020_155_B.data</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN -r 100 -w 15 -h 15 -p data/EMPTY.data) </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN -r 100 -w 15 -h 15 -p data/EMPTY.data</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -l ES -w 15  -h 15 -r 100</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -l ES -r 100 -w 15 -h 15</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/EN_2020_0.match -save data/.out.match</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/ES_100_156.match -save tests/.out.match</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/ES_100_156.match -save tests/.out.match &lt; data/ES_100_156_222.data</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/EN_2020_0.match -save data/.out.match &lt; data/EN_2020_0_47_BADS.data </runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <runcommand>"${OUTPUT_PATH}" -open data/EN_2020_0.match -save data/.out.match &lt; data/EN_2020_0_47_BADS.data</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <console-type>1</console-type>
