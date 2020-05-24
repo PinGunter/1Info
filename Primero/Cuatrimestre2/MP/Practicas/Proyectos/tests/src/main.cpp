@@ -37,13 +37,8 @@ int main() {
     while (turnos < 10) {
         tiles.print(cout);
         cin >> move;
-        tiles.add(move);
-        cout << endl << turnos << endl;
-        cout << "\nMaxword: ";
-        move = tiles.findMaxWord(move.getRow(),move.getCol(),move.isHorizontal());
-        cout << move << endl;
-        //list = tiles.findCrosswords(move, lang);
-        /*for (int i = 0; i < list.size(); i++) {
+        list = tiles.findCrosswords(move, lang);
+        for (int i = 0; i < list.size(); i++) {
             if (list.size() == 1 && turnos != 0)
                 list.get(i).setScore(MISSING_CROSSWORDS);
             string a = to_string(list.get(i).getScore());
@@ -62,8 +57,8 @@ int main() {
             }
         }else
             cout << "\nBad crosswords";
-*/
-        tiles.add(move);
+
+        //tiles.add(move);
 
         turnos++;
     }
