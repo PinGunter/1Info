@@ -123,6 +123,7 @@ int main(int nargs, char * args[]) {
         game.player.add(game.bag.extract(MAXPLAYER));
         game.tiles.setSize(h, w);
     }
+    
     es_vacio = true;
     for (int i=0; i < game.tiles.getHeight(); i++)
         for (int j=0; j < game.tiles.getWidth(); j++)

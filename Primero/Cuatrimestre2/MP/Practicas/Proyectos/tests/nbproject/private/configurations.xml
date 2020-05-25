@@ -26,7 +26,6 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN -r 100 -w 15 -h 15 -p data/EMPTY.data</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"    -open data/ES_2020_155_A.match -p data/ES_2020_155_B.data</runcommandpicklistitem>
@@ -36,6 +35,7 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN -r 100 -w 15 -h 15 -p data/EMPTY.data) </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN  -w 15 -h 15 -p data/EMPTY.data)</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN  -w 15 -h 15 </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -l EN  -w 15 -h 15</runcommandpicklistitem>
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"  -l EN  -w 15 -h 15</runcommand>
         <rundir></rundir>
