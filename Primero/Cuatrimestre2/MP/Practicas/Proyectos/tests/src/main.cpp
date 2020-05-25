@@ -52,8 +52,7 @@ int main(int nargs, char * args[]) {
     ofstream ofile;
     bool end = false;
     char c;
-    bool nueva_partida, continuar_partida, primer_turno,es_vacio, continuar;
-    game.random = -1;
+    bool nueva_partida, continuar_partida, primer_turno,es_vacio, continuar, in_id = false;
     game.score = 0;
 
     /// Check arguments
@@ -72,8 +71,10 @@ int main(int nargs, char * args[]) {
             w = atoi(args[i++]);
         else if (aux == "-h")
             h = atoi(args[i++]);
-        else if (aux == "-r")
+        else if (aux == "-r"){
             game.random = atoi(args[i++]);
+            in_id = true;
+        }
         else if (aux == "-save")
             ofilematch = args[i++];
         else
@@ -117,10 +118,10 @@ int main(int nargs, char * args[]) {
     // the new Tiles
     if (nueva_partida){
         game.language.setLanguage(lang);
-        if (game.random != -1)
+        if (in_id)
             game.bag.setRandom(game.random);
         game.bag.define(game.language);
-        game.player.add(game.bag.extract(MAXPLAYER));
+        game.player.add(toISO(game.bag.extract(MAXPLAYER)));
         game.tiles.setSize(h, w);
     }
     
