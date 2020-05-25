@@ -26,7 +26,6 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/ES_100_156.match -save tests/.out.match</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/EN_2020_0.match -save data/.out.match &lt; data/EN_2020_0_47_BADS.data </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/EN_2020_0.match -save data/.out.match &lt; data/EN_2020_0_47_BADS.data</runcommandpicklistitem>
@@ -36,6 +35,7 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" -open data/ES_100_156.match</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -l ES -w 15 -h 15 -r 100</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"  -open data/EN_2020_0.match  </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"  -open data/EN_2020_0.match</runcommandpicklistitem>
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"  -open data/EN_2020_0.match</runcommand>
         <rundir></rundir>
