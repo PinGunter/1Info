@@ -218,6 +218,7 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     int fila = m.getRow(), columna = m.getCol();
 
     if (get(fila - 1, columna - 1) != EMPTY) { //En caso de que el main no compruebe bien el NOT FREE
+        move = m;
         move.setScore(NOT_FREE);
         lista.add(move);
         return lista;

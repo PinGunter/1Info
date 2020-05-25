@@ -98,12 +98,12 @@ int Movelist::getScore() const{
     int score = 0;
     bool validscore = true;
     for (int i = 0; i < size() && validscore; i++) {
-        if (get(i).getScore() != -1)
+        if (get(i).getScore() >= 0)
             score += get(i).getScore();
 
         else {
             validscore = false;
-            score = -1;
+            score = get(i).getScore();
         }
     }
     return score;

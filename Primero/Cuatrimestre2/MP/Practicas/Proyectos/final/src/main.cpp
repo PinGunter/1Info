@@ -52,7 +52,8 @@ int main(int nargs, char * args[]) {
     ofstream ofile;
     bool end = false;
     char c;
-    bool nueva_partida, continuar_partida;
+    bool nueva_partida, continuar_partida, primer_turno,es_vacio, continuar, in_id = false;
+    game.score = 0;
 
     /// Check arguments
 
@@ -70,8 +71,10 @@ int main(int nargs, char * args[]) {
             w = atoi(args[i++]);
         else if (aux == "-h")
             h = atoi(args[i++]);
-        else if (aux == "-r")
+        else if (aux == "-r"){
             game.random = atoi(args[i++]);
+            in_id = true;
+        }
         else if (aux == "-save")
             ofilematch = args[i++];
         else
@@ -108,20 +111,27 @@ int main(int nargs, char * args[]) {
         if (!ofile)
             errorBreak(ERROR_OPEN,ofilematch);
     }
-    /// load data from file, if asked to in arguments
+     /// load data from file, if asked to in arguments
 
     // Game's main loop 
     // 1) First set the size of the window according to the size (rows & columns) of
     // the new Tiles
     if (nueva_partida){
         game.language.setLanguage(lang);
-        if (game.random != -1)
+        if (in_id)
             game.bag.setRandom(game.random);
         game.bag.define(game.language);
-        game.player.add(game.bag.extract(MAXPLAYER));
+        game.player.add(toISO(game.bag.extract(MAXPLAYER)));
         game.tiles.setSize(h, w);
     }
-
+    
+    es_vacio = true;
+    for (int i=0; i < game.tiles.getHeight(); i++)
+        for (int j=0; j < game.tiles.getWidth(); j++)
+            if (game.tiles.get(i,j) != EMPTY)
+                es_vacio = false;
+    primer_turno = nueva_partida || es_vacio;
+    continuar = true;
     while (!end) {
         game.setWindowSize();
         // 2) Given the inner data members, it pretty-prints the screen
@@ -133,21 +143,30 @@ int main(int nargs, char * args[]) {
         word = move.getLetters();
         if (word == "_") {
             end = true;
-        } else{
-         
-            // Checks whether the movement is valid accoring to the letters in player    
-            if (game.player.isValid(move.getLetters())){
-                // Finds all the crosswords produced by move and inform about the reasons of rejection
-                if (game.tiles.get(move.getRow()-1,move.getCol()-1) != EMPTY){
-                    move.setScore(NOT_FREE);
-                    game.doBadCrosswords("Not free");
-                    game.rejectedmovements.add(move);
-                }
-                
-                game.crosswords = game.tiles.findCrosswords(move, game.language);
-                        //Checks that the crosswords are valid, that is either has a positive score
-                if (game.crosswords.getScore() > 0){
-                    if (game.doConfirmCrosswords("Accept movement?")){
+        } else{    
+            //errores previos al findcrossword
+            /* INFEASABLE WORD*/
+            if (!game.player.isValid(move.getLetters())){
+                game.crosswords.clear();
+                move.setScore(INFEASIBLE_WORD);
+                game.rejectedmovements.add(move);
+                game.crosswords.add(move);
+                game.doBadCrosswords("Infeasable word");
+            }
+            /*  NOT FREE    */
+            else if (game.tiles.get(move.getRow()-1,move.getCol()-1) != EMPTY){
+                game.crosswords.clear();
+                move.setScore(NOT_FREE);
+                game.rejectedmovements.add(move);
+                game.crosswords.add(move);
+                game.doBadCrosswords("Bad crosswords found!");
+
+             /*     errores despues del findcrossword*/
+            } else {
+                game.crosswords = game.tiles.findCrosswords(move,game.language);
+                if (game.crosswords.size() != 0 && game.crosswords.getScore() >= 0 && (primer_turno || continuar)){
+                     if (game.doConfirmCrosswords("Accept movement?")){
+                         primer_turno = false;
                         for (int i=0; i < game.crosswords.size(); i++){
                             game.tiles.add(game.crosswords.get(i));
                         }
@@ -156,8 +175,31 @@ int main(int nargs, char * args[]) {
                         game.player.extract(word);
                         game.player.add(game.bag.extract(MAXPLAYER-game.player.to_string().length()));
                     }
-                        
                 }
+                else if (game.crosswords.size()==1 && game.crosswords.get(0).getLetters() == word){//(game.acceptedmovements.size() >= 1 || continuar_partida) ){
+                    move.setScore(MISSING_CROSSWORDS);
+                    game.rejectedmovements.add(move);
+                    game.doBadCrosswords("Missing crosswords");
+                } else if (game.crosswords.size() == 0){
+                    game.crosswords.clear();
+                    move.setScore(BOARD_OVERFLOW);
+                    game.rejectedmovements.add(move);
+                    game.crosswords.add(move);
+                    game.doBadCrosswords("Board overflow");
+                } else{
+                    move.setScore(NONEXISTENT_WORD);
+                    game.rejectedmovements.add(move);
+                    game.doBadCrosswords("Bad crosswords found!");
+                }
+            }
+        
+
+            // Checks whether the movement is valid accoring to the letters in player    
+           
+                // Finds all the crosswords produced by move and inform about the reasons of rejection
+             
+                        //Checks that the crosswords are valid, that is either has a positive score
+              
             //      or produces at least a cross with other existin letters
             // Once a valid move is detected, the user is asked to confirm
 
@@ -169,38 +211,13 @@ int main(int nargs, char * args[]) {
             // If valid and accepted, computes the score and adds it
             // Show crosswords found
             // If it is a bad crosswords
-                else{
-                    if (game.crosswords.size() == 0){
-                        game.doBadCrosswords("Board Overflow");
-                        move.setScore(BOARD_OVERFLOW);
-                        game.rejectedmovements.add(move);
-                    }
-                    else if (game.crosswords.size() == 1 && game.acceptedmovements.size() > 0){
-                        game.doBadCrosswords("No crosswords found");
-                        move.setScore(MISSING_CROSSWORDS);
-                        game.rejectedmovements.add(move);
-                    }
-                    else if (game.crosswords.size() >= 1){
-                        game.doBadCrosswords("Non-existent word");
-                        move.setScore(NONEXISTENT_WORD);
-                        game.rejectedmovements.add(move);
-                    } else{
-                        game.doBadCrosswords("Unknown error");
-                        move.setScore(UNKNOWN);
-                        game.rejectedmovements.add(move);
-                    }
-                   
-                }
+            
             // call doBadCrosswords()
 
             // If not valid w.r.t. player
 
             // call doBadCrosswords()
-            } else{
-                game.doBadCrosswords("Infeasible word");
-                move.setScore(INFEASIBLE_WORD);
-                game.rejectedmovements.add(move);
-            }
+
         }
     }
         // End of game
