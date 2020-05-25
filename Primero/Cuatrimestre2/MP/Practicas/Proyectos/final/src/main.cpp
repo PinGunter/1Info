@@ -130,7 +130,7 @@ int main(int nargs, char * args[]) {
         for (int j=0; j < game.tiles.getWidth(); j++)
             if (game.tiles.get(i,j) != EMPTY)
                 es_vacio = false;
-    primer_turno = nueva_partida || es_vacio;
+    primer_turno = es_vacio;
     continuar = true;
     while (!end) {
         game.setWindowSize();
@@ -165,7 +165,7 @@ int main(int nargs, char * args[]) {
             } else {
                 game.crosswords = game.tiles.findCrosswords(move,game.language); 
                 
-                if (game.crosswords.size() != 0 && game.crosswords.getScore() >= 0 && ((game.crosswords.size() == 1 && game.crosswords.get(0).getLetters() != word) || primer_turno)){
+                if (game.crosswords.size() != 0 && game.crosswords.getScore() >= 0){
                      if (game.doConfirmCrosswords("Accept movement?")){
                          primer_turno = false;
                         for (int i=0; i < game.crosswords.size(); i++){
@@ -178,7 +178,7 @@ int main(int nargs, char * args[]) {
                     }
                 }
             
-                else if (game.crosswords.size()==1 && game.crosswords.get(0).getLetters() == word){//(game.acceptedmovements.size() >= 1 || continuar_partida) ){
+                else if (game.crosswords.size()==1 && game.crosswords.getScore() == MISSING_CROSSWORDS){//(game.acceptedmovements.size() >= 1 || continuar_partida) ){
                     move.setScore(MISSING_CROSSWORDS);
                     game.rejectedmovements.add(move);
                     game.doBadCrosswords("Missing crosswords");
