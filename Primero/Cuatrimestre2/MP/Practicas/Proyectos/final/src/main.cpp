@@ -163,8 +163,9 @@ int main(int nargs, char * args[]) {
 
              /*     errores despues del findcrossword*/
             } else {
-                game.crosswords = game.tiles.findCrosswords(move,game.language);
-                if (game.crosswords.size() != 0 && game.crosswords.getScore() >= 0 && (primer_turno || continuar)){
+                game.crosswords = game.tiles.findCrosswords(move,game.language); 
+                
+                if (game.crosswords.size() != 0 && game.crosswords.getScore() >= 0 && ((game.crosswords.size() == 1 && game.crosswords.get(0).getLetters() != word) || primer_turno)){
                      if (game.doConfirmCrosswords("Accept movement?")){
                          primer_turno = false;
                         for (int i=0; i < game.crosswords.size(); i++){
@@ -176,6 +177,7 @@ int main(int nargs, char * args[]) {
                         game.player.add(game.bag.extract(MAXPLAYER-game.player.to_string().length()));
                     }
                 }
+            
                 else if (game.crosswords.size()==1 && game.crosswords.get(0).getLetters() == word){//(game.acceptedmovements.size() >= 1 || continuar_partida) ){
                     move.setScore(MISSING_CROSSWORDS);
                     game.rejectedmovements.add(move);
