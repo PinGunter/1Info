@@ -282,8 +282,12 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     
     lista.add(move);
     
-    if (!vacio && lista.size() == 1)
-        lista.get(0).setScore(MISSING_CROSSWORDS);
+    if (!vacio && lista.size() == 1 && lista.get(0).getLetters() == m.getLetters()){
+        lista.clear();
+        move.setScore(MISSING_CROSSWORDS);
+        lista.add(move);
+        return lista;
+    }
         
     
     if (k < m.getLetters().length())
