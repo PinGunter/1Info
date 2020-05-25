@@ -1,7 +1,7 @@
 "make" -f nbproject/Makefile-Debug.mk QMAKE= SUBPROJECTS= .build-conf
-make[1]: se entra en el directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
+make[1]: se entra en el directorio '/home/salva/Proyectos/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
 "make"  -f nbproject/Makefile-Debug.mk dist/Debug/GNU-Linux/final
-make[2]: se entra en el directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
+make[2]: se entra en el directorio '/home/salva/Proyectos/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
 mkdir -p build/Debug/GNU-Linux/src
 rm -f "build/Debug/GNU-Linux/src/bag.o.d"
 g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/bag.o.d" -o build/Debug/GNU-Linux/src/bag.o src/bag.cpp
@@ -25,5 +25,5 @@ rm -f "build/Debug/GNU-Linux/src/window.o.d"
 g++    -c -g -Iinclude -I../local/include -std=c++14 -MMD -MP -MF "build/Debug/GNU-Linux/src/window.o.d" -o build/Debug/GNU-Linux/src/window.o src/window.cpp
 mkdir -p dist/Debug/GNU-Linux
 g++     -o dist/Debug/GNU-Linux/final build/Debug/GNU-Linux/src/bag.o build/Debug/GNU-Linux/src/main.o build/Debug/GNU-Linux/src/move.o build/Debug/GNU-Linux/src/movelist.o build/Debug/GNU-Linux/src/player.o build/Debug/GNU-Linux/src/tiles.o build/Debug/GNU-Linux/src/window.o ../local/lib/liblanguage.a ../local/lib/libwordlist.a ../local/lib/libansiterminal.a
-make[2]: se sale del directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
-make[1]: se sale del directorio '/home/salvaromero/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
+make[2]: se sale del directorio '/home/salva/Proyectos/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'
+make[1]: se sale del directorio '/home/salva/Proyectos/InfoUni/Primero/Cuatrimestre2/MP/Practicas/Proyectos/final'

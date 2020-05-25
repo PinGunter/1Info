@@ -211,7 +211,7 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     // Primero metemos el move en el tablero en los huecos disponibles
     // Creamos un tablero auxiliar
     Tiles otro(*this);
-    bool continuar = true, copiar = true;
+    bool continuar = true, copiar = true, vacio = true;
     int k = 0;
     Movelist lista;
     Move move;
@@ -224,6 +224,12 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
         return lista;
     }
 
+    //Comprobamos el missing crosswords
+    for (int i=0; i < getHeight(); i++)
+        for (int j=0; j < getWidth(); j++)
+            if (get(i,j) != EMPTY)
+                vacio = false;
+        
 
     //horizontal
     if (m.isHorizontal()) {
@@ -275,6 +281,10 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
         move.setScore(NONEXISTENT_WORD);
     
     lista.add(move);
+    
+    if (!vacio && lista.size() == 1)
+        lista.get(0).setScore(MISSING_CROSSWORDS);
+        
     
     if (k < m.getLetters().length())
         lista.clear();
