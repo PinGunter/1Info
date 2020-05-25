@@ -53,6 +53,7 @@ int main(int nargs, char * args[]) {
     bool end = false;
     char c;
     bool nueva_partida, continuar_partida;
+    game.random = -1;
 
     /// Check arguments
 
@@ -108,7 +109,7 @@ int main(int nargs, char * args[]) {
         if (!ofile)
             errorBreak(ERROR_OPEN,ofilematch);
     }
-    /// load data from file, if asked to in arguments
+     /// load data from file, if asked to in arguments
 
     // Game's main loop 
     // 1) First set the size of the window according to the size (rows & columns) of
@@ -146,7 +147,7 @@ int main(int nargs, char * args[]) {
                 
                 game.crosswords = game.tiles.findCrosswords(move, game.language);
                         //Checks that the crosswords are valid, that is either has a positive score
-                if (game.crosswords.getScore() > 0){
+                if (game.crosswords.getScore() > 0 && game.acceptedmovements.size() >= 0){
                     if (game.doConfirmCrosswords("Accept movement?")){
                         for (int i=0; i < game.crosswords.size(); i++){
                             game.tiles.add(game.crosswords.get(i));
