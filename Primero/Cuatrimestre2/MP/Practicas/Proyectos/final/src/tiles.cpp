@@ -225,8 +225,8 @@ Movelist Tiles::findCrosswords(const Move &m, const Language &l) const {
     }
 
     //Comprobamos el missing crosswords
-    for (int i=0; i < getHeight(); i++)
-        for (int j=0; j < getWidth(); j++)
+    for (int i=0; i < getHeight() && vacio; i++)
+        for (int j=0; j < getWidth() && vacio; j++)
             if (get(i,j) != EMPTY)
                 vacio = false;
         
