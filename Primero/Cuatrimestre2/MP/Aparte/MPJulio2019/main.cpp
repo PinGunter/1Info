@@ -31,5 +31,5 @@ int main(int argc, char *args[]) {
     fich_mayor = (mayor == &subimg1) ? &fichero1 : &fichero2;
     cout << "La mayor subimagen tiene los comentarios: " << std::endl << (*mayor).getComentarios() <<  std::endl;
     cout << "El fichero donde se encuentra la mayor subimagen es el fichero " << *fich_mayor << std::endl;
-    cout << "media: " << (*mayor).ValorMedio() << endl;
+
 }
