@@ -9,11 +9,9 @@ private:
     Comentarios comentarios;
     void liberarMemoria();
     void reservarMemoria(int f, int c);
-    
+    double ValorMedio() const;	
 
 public:
-        double ValorMedio() const;
-
     Imagen(const Imagen & otro);
     int getNumFilas() const;
     int getNumColumnas() const;
