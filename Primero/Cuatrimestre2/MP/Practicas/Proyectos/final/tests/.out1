@@ -1,0 +1,5 @@
+
+%%%OUTPUT
+Error in call. Please use either:
+-l <language> -w <width> -h <height> [-r <randomnumber> -save <matchfile>]
+-open <matchfile> [-save <matchfile>]
