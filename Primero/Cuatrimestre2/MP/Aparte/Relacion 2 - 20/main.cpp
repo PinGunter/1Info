@@ -1,61 +1,42 @@
 #include <iostream>
+#include "Lista.h"
 
 using namespace std;
 
-struct Celda {
-    double dato;
-    Celda *sig;
-};
+int main()
+{
+	double array[] = { 1,2,3,4,5,6,7,8,9,10 };
+	Lista lista;
 
-class Lista {
-    Celda *l;
-public:
+	for (int i = 0; i < 10; i++)
+	{
+		lista.aniadir(array[i]);
+	}
+	cout << "Lista: " << endl;
+	lista.imprimir();
 
-    Lista() {
-        l = nullptr;
-    }
+	lista.eliminarUltimo();
+	cout << "Lista despues de eliminarFinal(): " << endl;
+	lista.imprimir();
 
-    void insertarFinal(double dato) {
-        if (l == nullptr) {
-            Celda *aux = new Celda;
-            aux->dato = dato;
-            aux->sig = l;
-            l = aux;
-        } else {
-            while (l != nullptr)
-                l = l->sig;
-            Celda *aux = new Celda;
-            aux->dato = dato;
-            aux->sig = l->sig;
-            l->sig = aux;
-        }
-    }
+	Celda* pos = lista.getCelda(2);
+	lista.eliminar(pos);
+	cout << "Lista despues de eliminar posición 2: " << endl;
+	lista.imprimir();
 
-    void eliminarUltimo() {
-        //buscamos la celda que apunta al ultimo elemento
-        while (l->sig != nullptr)
-            l = l->sig;
-        //ahora apuntamos a nullptr
-        l->sig = nullptr;
-    }
+	pos = lista.getCelda(0);
+	lista.eliminar(pos);
+	cout << "Lista despues de eliminar posición 0: " << endl;
+	lista.imprimir();
 
-    void liberar() {
-        while (l != nullptr) {
-            Celda *aux = l;
-            l = aux->sig;
-            delete aux;
-        }
-    }
+	pos = lista.getCelda(0);
+	lista.insertarTras(pos, 3);
+	cout << "Lista despues de insertar 3 en posición siguiente a 0: " << endl;
+	lista.imprimir();
 
-    void imprime() {
-        while (l != nullptr) {
-            cout << l->dato << " ";
-            l = l->sig;
-        }
-    }
-    
-};
+	lista.insertarTras(0, 1);
+	cout << "Lista despues de insertar 1 al principio: " << endl;
+	lista.imprimir();
 
-int main() {
-
+	lista.liberar();
 }
