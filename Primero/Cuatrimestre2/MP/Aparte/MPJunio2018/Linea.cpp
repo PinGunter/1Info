@@ -17,14 +17,13 @@ void Linea::reservarMemoria(int n) {
 }
 
 void Linea::redimensionar(int n) {
-    if (n > num_paradas) {
-        InfoParada* nueva = new InfoParada[n];
-        for (int i = 0; i < num_paradas; i++)
-            nueva[i] = paradas[i];
-        delete[] paradas;
-        paradas = nueva;
-        num_paradas = n;
-    }
+    InfoParada* nueva = new InfoParada[n];
+    for (int i = 0; i < num_paradas && i < n; i++)
+        nueva[i] = paradas[i];
+    delete[] paradas;
+    paradas = nueva;
+    num_paradas = n;
+
 }
 
 void Linea::liberarMemoria() {
