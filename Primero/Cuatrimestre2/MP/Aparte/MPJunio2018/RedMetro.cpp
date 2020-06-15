@@ -200,6 +200,8 @@ int RedMetro::MejorConectada() const {
             mayor_id = ids[i];
             mayor_fr = fr[i];
         }
+    delete [] ids;
+    delete [] fr;
     return mayor_id;
 }
 
